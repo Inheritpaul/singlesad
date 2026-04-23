@@ -1,0 +1,601 @@
+---
+import Base from "../layouts/Base.astro";
+
+const ASSETS = `${import.meta.env.PUBLIC_ASSETS_BASE_URL}/firstprusiosuncheon`;
+
+// ───────── Inline SVG assets (supplied by Paul) ─────────
+
+const prusioLogo = `<svg viewBox="0 0 361 58" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M207.952 28.5148C207.952 13.001 217.191 2.08563 229.093 2.08563C236.294 2.08563 242.84 5.81743 246.757 12.5187H247.175V2.08563C247.175 2.08563 237.565 0.141869 229.093 0H227.77C208.925 0 196.131 12.7682 196.131 28.5148C196.131 43.9124 208.335 56.4779 223.599 57.0299V56.6116C214.873 55.7025 207.952 43.4419 207.952 28.5148ZM140.491 35.47V0.69793H129.365V35.47C129.365 50.2382 139.552 56.8057 151.273 57.0299V56.6116C143.142 55.9137 140.491 46.1957 140.491 35.47ZM164.137 35.47C164.137 46.1957 161.486 55.9137 153.354 56.6116V57.0299C165.076 56.8057 175.263 50.2382 175.263 35.47V0.69793H164.137V35.47ZM271.248 56.3324H282.374V0.69793H271.247L271.248 56.3324ZM32.4276 3.22955C27.9069 1.09173 21.4474 0.695479 13.2166 0.695479H0V56.3332H11.1265V1.53121H13.2166C21.2061 1.53121 29.2086 5.44889 29.2086 16.6916C29.2086 27.9351 21.2061 32.2698 13.2166 32.2698V32.6881C21.4474 32.6881 27.9069 32.2914 32.4276 30.154C37.7537 27.6203 40.3351 23.1038 40.3351 16.6916C40.3351 10.2794 37.7537 5.76361 32.4276 3.22955ZM97.3956 27.5918C102.994 25.2819 105.708 21.1535 105.708 15.3014C105.708 9.44526 102.993 5.32089 97.396 3.00696C92.6385 1.05913 85.8553 0.697109 77.1977 0.697109H63.9811V56.3308H75.1121V1.52876H77.1977C85.5969 1.52876 94.0087 5.03674 94.0087 15.3014C94.0087 22.7092 89.6173 26.803 84.0151 28.5139C82.0718 29.1042 79.9902 29.4149 77.8919 29.4662L97.3654 56.3308H109.88L90.281 29.2942C93.0001 28.9448 95.3919 28.4149 97.3654 29.4662L97.3654 56.3308H109.88L90.281 29.2942C93.0001 28.9448 95.3919 28.4149 97.3956 27.5918ZM331.75 0.000411034C316.004 0.000411034 303.235 12.7645 303.235 28.5152C303.235 43.9083 315.443 56.4788 330.707 57.0303V56.6121C321.977 55.703 315.06 43.4387 315.06 28.5156C315.06 12.9973 322.533 0.836125 331.75 0.836125C340.972 0.836125 348.44 12.9973 348.44 28.5152C348.44 43.4427 341.524 55.7026 332.793 56.6121V57.0303C348.057 56.4788 360.265 43.9083 360.265 28.5152C360.265 12.7645 347.497 0.000411034 331.75 0.000411034Z" fill="currentColor"/></svg>`;
+
+const daewooLogo = `<svg viewBox="0 0 53 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="대우건설"><g clip-path="url(#clipDW)"><mask id="mDW0" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-237" y="-76" width="552" height="364"><path d="M-236.096 -75.503H314.506V287.127H-236.096V-75.503Z" fill="white"/></mask><g mask="url(#mDW0)"><path d="M29.2092 3.90187C30.3885 3.90187 31.2228 4.45364 31.2228 5.04676C31.2228 5.64074 30.3885 6.19165 29.2092 6.19165C28.0303 6.19165 27.196 5.64074 27.196 5.04676C27.196 4.45364 28.0303 3.90187 29.2092 3.90187ZM29.2092 7.07422C30.9726 7.07422 32.7453 6.36136 32.7453 5.04676C32.7453 3.7313 30.9726 3.01973 29.2092 3.01973C27.4453 3.01973 25.6731 3.7313 25.6731 5.04676C25.6731 6.36136 27.4453 7.07422 29.2092 7.07422Z" fill="#214975"/><path d="M24.5701 8.44384H28.4919V10.6914H29.9209V8.44384H33.8201V7.48072H24.5701V8.44384Z" fill="#214975"/><path d="M51.5426 6.83203H52.9823V3.29873H51.5426V4.44878H49.9087V5.36926H51.5426V6.83203Z" fill="#214975"/><path d="M47.1247 5.16217C47.6612 5.96247 48.8003 6.49615 49.7858 6.73047L50.1877 5.869C48.6504 5.35557 48.0594 4.53804 47.8762 3.29753H46.3616C46.178 4.53804 45.5981 5.35557 44.0608 5.869L44.4636 6.73047C45.4482 6.49615 46.5882 6.0288 47.1247 5.16217Z" fill="#214975"/><path d="M47.1464 9.82104V9.28047H52.9944V7.1548H45.7012V8.02488H51.5497V8.48275H45.7012V9.81328C45.7012 10.2905 46.1211 10.6816 46.6386 10.6816H52.9995V9.82104H47.1464Z" fill="#214975"/><path d="M41.5624 9.32031H43.0123V3.30814H41.5624V4.88075H39.9373V5.95456H41.5624V9.32031Z" fill="#214975"/><path d="M37.1829 9.72501V7.75096H35.7358V9.8146C35.7358 10.2927 36.1548 10.6855 36.671 10.6855H43.0259V9.72501H37.1829Z" fill="#214975"/><path d="M34.9292 3.45154V4.42112H37.9996C37.7674 5.64311 35.8879 6.40809 34.2554 6.6493L34.6998 7.5C36.6283 7.24285 38.1462 6.58986 38.9606 5.67154C39.5387 5.0207 39.7658 4.39097 39.7528 3.45154H34.9292Z" fill="#214975"/><path d="M15.1167 8.21C15.1167 8.68725 15.5542 9.08008 16.0713 9.08008H19.6901V8.11954H16.5804V4.43505H19.3627V3.44695H15.1167V8.21Z" fill="#214975"/><path d="M20.1309 10.6914H21.5026V6.57661H22.237V10.6914H23.6082V3.3039H22.237V5.51356H21.5026V3.3039H20.1309V10.6914Z" fill="#214975"/></g><mask id="mDW1" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="10" height="4"><path d="M0.486821 0.680904C0.192686 0.799356 0.223205 0.997941 0.308763 1.12888C0.447969 1.33736 0.586718 1.40756 0.586718 1.40756C3.2196 0.59907 5.29611 1.16592 6.75014 1.83829C8.32672 2.56709 9.5014 3.90625 9.5014 3.90625C9.61425 3.38592 9.6716 2.15013 9.14114 1.44718C9.14114 1.44718 8.65556 1.16721 7.86842 0.795055C6.93098 0.352261 5.57129 -8.17776e-05 4.04373 -8.17776e-05C2.82047 -0.00297046 1.60967 0.22884 0.486821 0.680904Z" fill="white"/></mask><g mask="url(#mDW1)"><path d="M0.486821 0.680904C0.192686 0.799356 0.223205 0.997941 0.308763 1.12888C0.447969 1.33736 0.586718 1.40756 0.586718 1.40756C3.2196 0.59907 5.29611 1.16592 6.75014 1.83829C8.32672 2.56709 9.5014 3.90625 9.5014 3.90625C9.61425 3.38592 9.6716 2.15013 9.14114 1.44718C9.14114 1.44718 8.65556 1.16721 7.86842 0.795055C6.93098 0.352261 5.57129 -8.17776e-05 4.04373 -8.17776e-05C2.82047 -0.00297046 1.60967 0.22884 0.486821 0.680904Z" fill="url(#dwG0)"/></g><mask id="mDW2" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="5" height="12"><path d="M2.86507e-05 1.42367C-0.00783345 2.14558 1.60482 2.36051 1.84392 5.14477C1.93226 6.18025 1.56042 7.37166 1.34306 7.91525C1.12754 8.45065 0.813077 9.40947 0.859325 10.2434C0.909273 11.1647 1.88232 11.5679 2.94047 11.4068C4.47635 11.1738 4.29922 10.9093 4.29922 10.9093C4.51982 10.1999 4.76954 6.97281 4.14103 5.34636C3.667 4.12092 2.94693 2.93168 0.685417 1.45901C0.116108 1.08729 0.246533 0.823248 0.449097 0.696181C0.449097 0.696181 0.0069658 0.868029 2.86507e-05 1.42367Z" fill="white"/></mask><g mask="url(#mDW2)"><path d="M2.86507e-05 1.42367C-0.00783345 2.14558 1.60482 2.36051 1.84392 5.14477C1.93226 6.18025 1.56042 7.37166 1.34306 7.91525C1.12754 8.45065 0.813077 9.40947 0.859325 10.2434C0.909273 11.1647 1.88232 11.5679 2.94047 11.4068C4.47635 11.1738 4.29922 10.9093 4.29922 10.9093C4.51982 10.1999 4.76954 6.97281 4.14103 5.34636C3.667 4.12092 2.94693 2.93168 0.685417 1.45901C0.116108 1.08729 0.246533 0.823248 0.449097 0.696181C0.449097 0.696181 0.0069658 0.868029 2.86507e-05 1.42367Z" fill="url(#dwG1)"/></g><mask id="mDW3" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="1" y="0" width="11" height="12"><path d="M9.19268 5.22006C8.51977 7.20962 6.5154 9.34605 4.99293 10.3475C2.6639 11.8818 1.33521 11.1172 1.33521 11.1172C2.53071 11.952 4.42684 12.5705 7.24333 11.1698C10.396 9.60234 11.9948 6.74829 11.5356 4.4331C11.3473 3.48635 10.3318 1.86507 8.28715 0.998438C8.28715 0.998438 10.2823 1.99603 9.19268 5.22006Z" fill="white"/></mask><g mask="url(#mDW3)"><path d="M9.19268 5.22006C8.51977 7.20962 6.5154 9.34605 4.99293 10.3475C2.6639 11.8818 1.33521 11.1172 1.33521 11.1172C2.53071 11.952 4.42684 12.5705 7.24333 11.1698C10.396 9.60234 11.9948 6.74829 11.5356 4.4331C11.3473 3.48635 10.3318 1.86507 8.28715 0.998438C8.28715 0.998438 10.2823 1.99603 9.19268 5.22006Z" fill="url(#dwG2)"/></g></g><defs><linearGradient id="dwG0" x1="3.57847" y1="2.79883" x2="6.92366" y2="1.41147" gradientUnits="userSpaceOnUse"><stop stop-color="#69B3E3"/><stop offset="1" stop-color="#214975"/></linearGradient><linearGradient id="dwG1" x1="2.40676" y1="8.34427" x2="2.28125" y2="4.5182" gradientUnits="userSpaceOnUse"><stop stop-color="#69B3E3"/><stop offset="1" stop-color="#214975"/></linearGradient><linearGradient id="dwG2" x1="8.29177" y1="4.7105" x2="6.77908" y2="8.69822" gradientUnits="userSpaceOnUse"><stop stop-color="#69B3E3"/><stop offset="1" stop-color="#214975"/></linearGradient><clipPath id="clipDW"><rect width="53" height="12" fill="white"/></clipPath></defs></svg>`;
+
+const suncheondcLogo = `<svg viewBox="0 0 50 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="순천DC"><path d="M47.4234 4.69191C47.3471 3.82732 46.7622 3.25516 45.7832 3.25516C44.5117 3.25516 43.787 4.23419 43.787 5.87437C43.787 7.60356 44.5244 8.49359 45.7705 8.49359C46.6986 8.49359 47.2962 7.985 47.4234 7.17127L49.8773 7.19669C49.7502 8.77331 48.3643 10.6042 45.7196 10.6042C43.1894 10.6042 41.2949 8.92588 41.2949 5.87437C41.2949 2.81015 43.2403 1.14453 45.7196 1.14453C48.0082 1.14453 49.6739 2.42871 49.8773 4.69191H47.4234Z" fill="currentColor"/><path d="M36.0212 10.616C34.0504 10.616 32.8552 9.45894 32.8552 8.0349C32.8552 6.9923 33.491 6.36929 34.4573 5.70813C34.0504 5.14868 33.6944 4.46209 33.6944 3.66107C33.6944 2.26246 34.7624 1.13086 36.3645 1.13086C37.9029 1.13086 38.8565 2.17346 38.8565 3.44492C38.8565 4.2968 38.4115 5.05968 37.6359 5.60641L37.1782 5.93699L38.3988 7.28474C38.6531 6.83973 38.8057 6.30571 38.8057 5.72084H40.7256C40.7256 6.92873 40.4459 8.04126 39.8228 8.86135L41.2723 10.4761H38.8565L38.3734 9.95481C37.6359 10.438 36.8095 10.616 36.0212 10.616ZM35.1566 7.8569C35.1566 8.40363 35.5634 8.73421 36.1992 8.73421C36.4789 8.73421 36.765 8.67063 37.0511 8.54349L35.627 7.04316C35.36 7.25295 35.1566 7.49453 35.1566 7.8569ZM35.6524 3.6865C35.6524 4.00437 35.8304 4.32223 36.1102 4.67824L36.5043 4.43666C36.9239 4.16966 37.0638 3.8645 37.0638 3.61021C37.0638 3.30506 36.8349 3.02534 36.3645 3.02534C35.9322 3.03805 35.6524 3.29235 35.6524 3.6865Z" fill="currentColor"/><path d="M27.7724 10.4769H24.2759V1.27148H27.747C30.5823 1.27148 32.3497 3.00067 32.3497 5.87418C32.3497 8.74769 30.5823 10.4769 27.7724 10.4769ZM26.6917 8.41711H27.6834C29.1074 8.41711 29.9085 7.81952 29.9085 5.87418C29.9085 3.92884 29.1074 3.33125 27.6198 3.33125H26.6917V8.41711Z" fill="currentColor"/><path d="M17.5051 1.24603V2.82265H15.3054C15.3372 3.96061 15.9793 5.25114 17.9501 5.83601L16.9838 7.39991C15.7123 7.05026 14.8477 6.33189 14.3264 5.41643C13.8051 6.41453 12.9278 7.19648 11.6055 7.57792L10.6265 5.98859C12.6036 5.42915 13.252 4.0814 13.2838 2.82265H11.0969V1.24603H13.2838V0.0635731H15.3309V1.24603H17.5051ZM20.7855 0V8.67138H18.7511V4.92056H17.1364V3.3058H18.7511V0H20.7855ZM21.0397 9.94284V11.5703H12.8261V7.95936H14.8604V9.94284H21.0397Z" fill="currentColor"/><path d="M6.42089 0.546304C6.40817 1.70334 7.31091 3.19095 10.248 3.57239L9.48511 5.17443C7.44442 4.88835 6.09666 4.04918 5.36557 2.94937C4.61541 4.06826 3.26766 4.92649 1.2206 5.21257L0.495871 3.62324C3.39481 3.21638 4.31026 1.74148 4.31026 0.546304V0.279297H6.42089V0.546304Z" fill="currentColor"/><path d="M10.7311 5.61944V7.2342H6.54803V9.01425H4.52641V7.2342H0V5.61944H10.7311Z" fill="currentColor"/><path d="M9.5614 9.94242V11.5699H1.16975V8.08608H3.20409V9.94242H9.5614Z" fill="currentColor"/></svg>`;
+
+const phoneIcon = `<svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6.0376 1.31617L6.6866 2.47911C7.2723 3.52859 7.0372 4.90533 6.1147 5.82781C6.1147 5.82781 4.99588 6.94682 7.0245 8.97552C9.0525 11.0035 10.1722 9.88532 10.1722 9.88532C11.0947 8.96282 12.4714 8.72772 13.5209 9.31342L14.6838 9.96242C16.2686 10.8468 16.4557 13.0692 15.0628 14.4622C14.2258 15.2992 13.2004 15.9505 12.0669 15.9934C10.1588 16.0658 6.9183 15.5829 3.6677 12.3323C0.417132 9.08172 -0.0657879 5.84123 0.00655207 3.9331C0.049522 2.79961 0.700802 1.77423 1.53781 0.937232C2.93076 -0.455721 5.15317 -0.26856 6.0376 1.31617Z" fill="currentColor"/></svg>`;
+
+const kakaoIcon = `<svg viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8.5 0C10.0368 0 11.4582 0.304757 12.7642 0.914271C14.0702 1.52378 15.1027 2.35259 15.8616 3.40071C16.6205 4.44882 17 5.59203 17 6.83043C17 8.06878 16.6205 9.21364 15.8616 10.265C15.1027 11.3163 14.0718 12.1467 12.769 12.7562C11.4662 13.3657 10.0431 13.6705 8.5 13.6705C8.01302 13.6705 7.51021 13.635 6.99164 13.5641C4.74013 15.1572 3.54166 15.9635 3.39619 15.9828C3.32664 16.0086 3.26024 16.0054 3.197 15.9731C3.17168 15.9538 3.1527 15.928 3.14006 15.8957C3.12742 15.8635 3.12108 15.8345 3.12108 15.8086V15.77C3.15904 15.5184 3.44679 14.4703 3.98438 12.6256C2.76376 12.0065 1.79455 11.1857 1.07673 10.1634C0.358911 9.1411 0 8.0301 0 6.83043C0 5.59203 0.379464 4.44882 1.13839 3.40071C1.89732 2.35259 2.92978 1.52378 4.23578 0.914271C5.54176 0.304757 6.96317 0 8.5 0ZM4.19309 8.6396V5.66943H4.94251C5.04372 5.66943 5.14965 5.63235 5.26031 5.55818C5.37101 5.484 5.42634 5.38243 5.42634 5.25343C5.42634 5.12443 5.37574 5.01639 5.27456 4.92932C5.17336 4.84225 5.07534 4.79871 4.98047 4.79871H2.51395C2.40643 4.79871 2.30525 4.83096 2.21038 4.89546C2.11551 4.95996 2.06808 5.06639 2.06808 5.21471C2.06808 5.36307 2.11868 5.47596 2.21986 5.55335C2.32106 5.63075 2.43489 5.66943 2.56138 5.66943H3.31081V8.6396C3.31081 8.80085 3.34877 8.93307 3.42466 9.03628C3.50055 9.13946 3.60806 9.19107 3.74719 9.19107C3.88636 9.19107 3.99544 9.13303 4.07448 9.01692C4.15356 8.90082 4.19309 8.77507 4.19309 8.6396ZM8.30077 9.19107C8.53477 9.10078 8.60751 8.87182 8.51898 8.50417C8.49366 8.42032 8.31499 7.91885 7.98297 6.99971C7.65095 6.0806 7.45964 5.55657 7.40904 5.42757C7.23828 5.00832 7.00428 4.79871 6.70704 4.79871C6.38447 4.79871 6.13468 5.00832 5.95758 5.42757C5.90698 5.53721 5.71409 6.07096 5.37889 7.02875C5.04372 7.98657 4.86977 8.47835 4.85713 8.50417C4.81287 8.56221 4.8018 8.66864 4.82393 8.82342C4.84607 8.97825 4.91407 9.08464 5.02789 9.14271C5.15438 9.20075 5.27772 9.20721 5.39787 9.16207C5.51806 9.11689 5.60025 9.04917 5.64451 8.95889L5.87221 8.32035H7.52289C7.59244 8.55253 7.64304 8.7041 7.67466 8.77507C7.70628 8.83957 7.74106 8.90407 7.77902 8.96857C7.81694 9.03307 7.88653 9.09592 7.98773 9.15721C8.08891 9.2185 8.19326 9.22978 8.30077 9.19107ZM10.8527 9.19107C10.9855 9.19107 11.1072 9.14914 11.2179 9.06532C11.3286 8.98146 11.3839 8.86857 11.3839 8.72667C11.3839 8.58478 11.3333 8.47353 11.2321 8.39289C11.1309 8.31228 11.0045 8.27196 10.8527 8.27196H9.79964V5.35018C9.79964 5.21471 9.76014 5.08896 9.68107 4.97285C9.60203 4.85675 9.49294 4.79871 9.35377 4.79871C9.21464 4.79871 9.10713 4.85032 9.03125 4.9535C8.95536 5.05671 8.9174 5.18893 8.9174 5.35018V8.6396C8.9174 8.80085 8.95536 8.93307 9.03125 9.03628C9.10713 9.13946 9.21464 9.19107 9.35377 9.19107C9.36011 9.19107 9.37118 9.18946 9.38701 9.18625C9.4028 9.183 9.41387 9.18139 9.42021 9.18139C9.42651 9.18139 9.43758 9.183 9.45341 9.18625C9.4692 9.18946 9.48027 9.19107 9.4866 9.19107H10.8527ZM14.5904 9.12335C14.6979 9.02014 14.7517 8.90242 14.7517 8.77021C14.7517 8.638 14.7106 8.52028 14.6283 8.4171C14.5904 8.35903 14.192 7.81403 13.433 6.78203C13.7998 6.4015 14.1698 6.02096 14.543 5.64043C14.6378 5.54368 14.6963 5.42918 14.7184 5.29696C14.7406 5.16475 14.7042 5.04057 14.6094 4.9245C14.5019 4.82128 14.3864 4.77935 14.2631 4.79871C14.1398 4.81807 14.0244 4.88257 13.9168 4.99221C13.8979 5.01157 13.8156 5.097 13.6702 5.24857C13.5247 5.40018 13.3366 5.59528 13.1057 5.83393C12.8749 6.07257 12.6709 6.28539 12.4939 6.47246V5.35018C12.4939 5.21471 12.4543 5.08896 12.3753 4.97285C12.2962 4.85675 12.1871 4.79871 12.048 4.79871C11.9088 4.79871 11.8013 4.85032 11.7254 4.9535C11.6495 5.05671 11.6116 5.18893 11.6116 5.35018V8.6396C11.6116 8.80085 11.6495 8.93307 11.7254 9.03628C11.8013 9.13946 11.9088 9.19107 12.048 9.19107C12.1871 9.19107 12.2962 9.13303 12.3753 9.01692C12.4543 8.90082 12.4939 8.77507 12.4939 8.6396V7.75921C12.5192 7.73339 12.5666 7.68343 12.6362 7.60925C12.7057 7.53507 12.7626 7.47539 12.8069 7.43025C13.2243 8.01075 13.5975 8.5235 13.9263 8.96857C14.0149 9.0911 14.1177 9.1701 14.2347 9.2056C14.3517 9.24107 14.4702 9.21364 14.5904 9.12335ZM6.12834 7.4496L6.70704 5.71782L7.27621 7.4496H6.12834Z" fill="currentColor"/></svg>`;
+
+// TODO: laurel-wreath SVG — Paul supplied only 2 of the full set of paths; remaining paths were truncated in the brief and need to be re-sent. Placeholder kept with partial data.
+const laurelWreath = `<svg viewBox="0 0 64 158" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M28.3328 117.442C26.5973 122.399 27.6096 126.627 28.3328 128.121C28.3328 129.263 28.6799 131.258 30.0683 130.098C31.8037 128.648 33.3223 125.22 34.2985 119.288C35.0795 114.542 34.19 111.159 33.6477 110.06C32.5992 110.455 30.0683 112.486 28.3328 117.442Z" fill="currentColor"/><path d="M34.5126 113.926C34.5706 114.37 34.6073 114.536 34.5732 114.994L34.5998 115.175C34.4562 118.109 34.3285 119.864 33.6541 122.747L33.5956 122.918C33.3627 122.83 33.2947 122.802 33.0476 122.764L32.8657 122.74C31.0912 122.469 29.7199 120.25 30.0544 118.113C30.1805 117.334 30.4899 116.616 30.9451 116.047C32.7221 113.795 33.7933 115.442 34.4645 114.874L34.5126 113.926Z" fill="currentColor"/></svg>`;
+
+// ───────── Data ─────────
+
+const pride6 = [
+  { key: "center", title: "순천의 중심에서 첫 푸르지오", desc: "첫번째 푸르지오가 순천의 중심에서 시작합니다." },
+  { key: "mart", title: "집앞 마트권", desc: "이마트, 홈플러스, 메가박스를 걸어서 바로 누린다" },
+  { key: "ktx", title: "KTX 역세권", desc: "순천역, 종합터미널, 동순천IC등 순천 전역을 빠르게" },
+  { key: "forest", title: "쾌적한 숲세권", desc: "국가정원, 순천 동천변, 순천만까지 누리는 숲세권" },
+  { key: "presale", title: "믿을 수 있는 선시공 후분양 사업", desc: "푸르지오의 안정성과 기술력을 직접 보고 선택" },
+  { key: "space", title: "푸르지오만의 공간 혁신", desc: "4Bay 맞통풍 구조(일부세대 제외) 세대별 창고 등 여유로운 수납공간 제공" },
+];
+
+const environment = [
+  { label: "INFRA", title: "걸어서 누리는 생활인프라", desc: "집앞을 나서면 이마트, 메가박스, 홈플러스를 바로 편리하게", thumb: "01_overview_prusio04.webp" },
+  { label: "TRAFFIC", title: "사통팔달의 쾌속 광역교통망", desc: "순천역, 버스터미널, 통순천IC 등 우수한 교통환경으로 빠르게", thumb: "01_overview_prusio05.webp" },
+  { label: "PLAN", title: "남쪽으로 시작되는 개발의 출발점", desc: "순천역 뉴딜계획으로부터 풍덕지구 개발 시작까지", thumb: "01_overview_prusio06.webp" },
+  { label: "GREEN", title: "걸어서 느끼는 녹색환경", desc: "순천동청변, 순천만 국가정원, 순천 호수공원 등을 상쾌하게", thumb: "01_overview_prusio07.webp" },
+  { label: "EDU", title: "풍부한 교육환경", desc: "순천중앙초, 풍덕초중, 이수중, 이수초 등으로 더 우수하게", thumb: "01_overview_prusio08.webp" },
+];
+
+const brandPower = [
+  { no: "01", text: "2010~2016 연속 주택공급실적 1위, 6년 연속" },
+  { no: "02", text: "2020 한국서비스대상 종합대상 수상" },
+  { no: "03", text: "2020 한국서비스대상 종합대상 수상" },
+  { no: "04", text: "세계 3대 디자인 어워드 IF 디자인 어워드 2020 커뮤니케이션 부문 WINNER" },
+];
+
+const utilityFeatures = [
+  { title: "중심의 자부심을 더하는 고품격 특화설계", desc: "순천의 주거가치를 높이는 560세대 프리미엄 단지. 푸르지오만의 감각적이고 트렌디한 스타일의 입면 디자인, 역동적인 스카이 라인, 모던한 측벽의 차별화된 디자인" },
+  { title: "보다 쾌적한 삶을 위한 친환경 단지 설계", desc: "4BAY설계로(일부), 통풍을 극대화 한 남향위주의 단지배치. 필로티 설계로 개방감 확보 및 세대 프라이버시보호(일부 동). 녹색건축예비인증(우량), 에너지효율(1+등급)예비인증을 받은 친환경 주거단지" },
+  { title: "안전한 이동을 반영한 공간 설계", desc: "전체 지하주차장 설계 및 바로 세대로 진입할 수 있는 편리한 주차시스템. 보행자의 안전과 쾌적성을 고려한 보행자 전용도로 설치" },
+];
+
+const typeColors: Record<string, string> = {
+  "84A": "#00b342",
+  "84B": "#bee1b0",
+  "84C": "#448426",
+  "84D": "#2e581a",
+  "111A": "#88abe0",
+  "111B": "#3373ca",
+  "111C": "#024f7d",
+};
+
+type TypeCard = {
+  code: string;
+  units: string;
+  py: string;
+  illustration: string;
+  map: string;
+  gallery: string[] | null;
+};
+
+const range = (prefix: string, n: number) =>
+  Array.from({ length: n }, (_, i) => `${prefix}${String(i + 1).padStart(2, "0")}.webp`);
+
+const types: TypeCard[] = [
+  { code: "84A",  units: "128", py: "33.98", illustration: "84A/02_type_illustration_84A.webp",  map: "84A/02_type_map_84A.webp",   gallery: range("84A/02_type_84A_", 19) },
+  { code: "84B",  units: "26",  py: "34.15", illustration: "02_type_illustration_84B.webp",       map: "02_type_map_84B.webp",       gallery: null },
+  { code: "84C",  units: "28",  py: "34.11", illustration: "02_type_illustration_84C.webp",       map: "02_type_map_84C.webp",       gallery: null },
+  // 84D: Figma layer names used `_84B_` prefix (designer typo); R2 bucket actually stores them with `_84D_` — using bucket truth.
+  { code: "84D",  units: "28",  py: "33.89", illustration: "84D/02_type_illustration_84D.webp",   map: "84D/02_type_map_84D.webp",   gallery: range("84D/02_type_84D_", 16) },
+  { code: "111A", units: "234", py: "42.70", illustration: "111A/02_type_illustration_111A.webp", map: "111A/02_type_map_111A.webp", gallery: range("111A/02_type_111A_", 19) },
+  { code: "111B", units: "96",  py: "43.40", illustration: "02_type_illustration_111B.webp",      map: "02_type_map_111B.webp",      gallery: null },
+  { code: "111C", units: "20",  py: "42.80", illustration: "111C/02_type_illustration_111C.webp", map: "111C/02_type_map_111C.webp", gallery: range("111C/02_type_111C_", 24) },
+];
+
+const specRows = ["전용면적", "주거공용면적", "공급면적", "기타공용면적", "계약면적"];
+
+// TODO: replace contact hrefs with real destinations once supplied.
+const PHONE_HREF = "tel:010-9986-9830";
+const KAKAO_HREF = "https://google.com";
+---
+
+<Base>
+  <!-- HEADER -->
+  <header class="w-full">
+    <div class="w-full bg-gradient-to-b from-[#005252] to-[#003e3e] text-white">
+      <div class="mx-auto max-w-[1200px] 2xl:max-w-[1400px] flex items-center justify-between px-5 md:px-[60px] h-[60px]">
+        <div class="flex items-center gap-3 md:gap-5">
+          <span class="inline-block w-[90px] md:w-[110px] text-white" set:html={prusioLogo} />
+          <span class="hidden md:inline-block text-[14px] tracking-[1.5px] font-semibold">THE FIRST</span>
+        </div>
+        <a href="#contact" class="text-[13px] md:text-[14px] font-medium hover:underline">청약 및 분양 문의하기</a>
+      </div>
+    </div>
+
+    <div class="md:hidden w-full bg-white border-b border-[#ebedeb] text-[#005252] text-[13px]">
+      <div class="flex items-stretch h-[40px] divide-x divide-[#ebedeb]">
+        <a href={PHONE_HREF} class="flex-1 flex items-center justify-center gap-2 font-medium">
+          <span class="inline-block w-4 h-4 text-[#005252]" set:html={phoneIcon} />
+          <span>1551-5601</span>
+        </a>
+        <a href={KAKAO_HREF} target="_blank" rel="noopener" class="flex-1 flex items-center justify-center gap-2 font-medium">
+          <span class="inline-block w-4 h-4 text-[#005252]" set:html={kakaoIcon} />
+          <span>@firstprusiosuncheon</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hidden md:block w-full bg-white border-b border-[#ebedeb]">
+      <div class="mx-auto max-w-[1200px] 2xl:max-w-[1400px] flex items-center justify-end gap-6 px-5 md:px-[60px] h-[40px] text-[#005252] text-[13px]">
+        <a href={PHONE_HREF} class="flex items-center gap-2 font-medium">
+          <span class="inline-block w-4 h-4" set:html={phoneIcon} />
+          <span>1551-5601</span>
+        </a>
+        <a href={KAKAO_HREF} target="_blank" rel="noopener" class="flex items-center gap-2 font-medium">
+          <span class="inline-block w-4 h-4" set:html={kakaoIcon} />
+          <span>@firstprusiosuncheon</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative w-full bg-white">
+    <img
+      src={`${ASSETS}/01_overview_prusio01.webp`}
+      alt="순천 푸르지오 더 퍼스트 전경"
+      width="3840"
+      height="1812"
+      loading="eager"
+      fetchpriority="high"
+      class="block w-full h-auto object-cover"
+    />
+    <div class="w-full bg-white py-10 md:py-16 xl:py-20 text-center">
+      <div class="mx-auto max-w-[1200px] 2xl:max-w-[1400px] px-5 md:px-[60px]">
+        <div class="flex items-center justify-center gap-6 md:gap-10 text-[#6a696a] mb-6 md:mb-10">
+          <span class="inline-block h-[26px] w-auto" set:html={daewooLogo} />
+          <span class="inline-block h-[26px] w-auto text-[#6a696a]" set:html={suncheondcLogo} />
+        </div>
+        <!-- TODO: insert prusio-pattern SVG here (decorative dot pattern above the hero headline) -->
+        <div class="mx-auto h-10 md:h-14 w-full max-w-[320px] bg-[#ebedeb] flex items-center justify-center text-[#8c7c6e] text-[11px] mb-6 md:mb-8">TODO: prusio-pattern</div>
+        <p class="text-[18px] md:text-[22px] xl:text-[24px] font-medium text-[#005252] tracking-[-0.2px] mb-3 md:mb-4">첫 푸르지오 순천의 중심이 되다</p>
+        <h1 class="text-[40px] md:text-[56px] xl:text-[60px] 2xl:text-[72px] font-extrabold text-[#003e3e] tracking-[-0.4px] leading-tight">
+          순천 푸르지오 더 퍼스트
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- STICKY SECONDARY NAV -->
+  <nav class="sticky top-[100px] md:top-[60px] z-40 w-full" aria-label="페이지 내비게이션">
+    <div class="w-full backdrop-blur-md bg-white/75 border-y border-[#ebedeb]">
+      <ul class="mx-auto max-w-[1200px] 2xl:max-w-[1400px] flex items-center justify-around md:justify-center md:gap-12 h-[48px] md:h-[59px] px-5 md:px-[60px] text-[13px] md:text-[15px] font-semibold text-[#005252]">
+        <li><a href="#brand" class="hover:text-[#003e3e]">브랜드</a></li>
+        <li><a href="#overview" class="hover:text-[#003e3e]">개요</a></li>
+        <li><a href="#type" class="hover:text-[#003e3e]">평형정보</a></li>
+        <li><a href="#utility" class="hover:text-[#003e3e]">부대시설</a></li>
+        <li><a href="#contact" class="hover:text-[#003e3e]">문의하기</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- BENEFITS -->
+  <section class="relative w-full bg-gradient-to-b from-[#635446] via-[#7b6b5d] to-[#8c7c6e] text-white py-16 md:py-24 xl:py-28">
+    <div class="mx-auto max-w-[1200px] 2xl:max-w-[1400px] px-5 md:px-[60px]">
+      <div class="flex items-center justify-center gap-4 md:gap-8 mb-4 md:mb-6">
+        <span class="inline-block w-8 md:w-12 h-auto text-white" set:html={laurelWreath} />
+        <h2 class="text-center text-[20px] md:text-[26px] xl:text-[30px] font-bold tracking-[-0.2px]">
+          순천 푸르지오 더 퍼스트의 주인이 될 기회
+        </h2>
+        <span class="inline-block w-8 md:w-12 h-auto text-white" style="transform: scaleX(-1);" set:html={laurelWreath} />
+      </div>
+      <p class="text-center text-[16px] md:text-[20px] xl:text-[22px] font-medium text-white/80 mb-10 md:mb-16">
+        다시 찾아오지 않을 엄청난 혜택 2가지
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mb-14 md:mb-20">
+        <div class="bg-white/10 border border-white/20 rounded-lg p-8 md:p-10 text-center">
+          <div class="text-[14px] md:text-[16px] text-white/70 font-medium mb-3">아파트 분양 지원 혜택</div>
+          <div class="text-[28px] md:text-[36px] xl:text-[40px] font-extrabold tracking-[-0.4px]">최대 1.5억 원</div>
+        </div>
+        <div class="bg-white/10 border border-white/20 rounded-lg p-8 md:p-10 text-center">
+          <div class="text-[14px] md:text-[16px] text-white/70 font-medium mb-3">입주 축하금</div>
+          <div class="text-[28px] md:text-[36px] xl:text-[40px] font-extrabold tracking-[-0.4px]">역대급 최대 지원</div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <p class="text-[18px] md:text-[22px] xl:text-[24px] font-bold mb-6 md:mb-8">
+          순천 푸르지오 더 퍼스트 분양 관련 문의하기
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-[640px] mx-auto">
+          <a href={PHONE_HREF} class="flex items-center justify-center gap-3 bg-[#f2ffff] text-[#005252] h-14 md:h-16 rounded-md font-semibold text-[15px] md:text-[16px] hover:bg-white transition-colors">
+            <span class="inline-block w-5 h-5" set:html={phoneIcon} />
+            <span>전화 문의하기</span>
+          </a>
+          <a href={KAKAO_HREF} target="_blank" rel="noopener" class="flex items-center justify-center gap-3 bg-[#f2ffff] text-[#005252] h-14 md:h-16 rounded-md font-semibold text-[15px] md:text-[16px] hover:bg-white transition-colors">
+            <span class="inline-block w-5 h-5" set:html={kakaoIcon} />
+            <span>카카오톡 문의하기</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRAND -->
+  <section id="brand" class="w-full bg-white py-16 md:py-24 xl:py-28">
+    <div class="mx-auto max-w-[1200px] 2xl:max-w-[1400px] px-5 md:px-[60px] grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
+      <div>
+        <p class="text-[12px] md:text-[14px] tracking-[1.5px] text-[#41847f] font-semibold mb-3">THE BRAND</p>
+        <h2 class="text-[24px] md:text-[30px] xl:text-[32px] font-extrabold text-[#003e3e] tracking-[-0.4px] leading-tight mb-6">
+          국내 정상급 프리미엄 주거 브랜드 푸르지오가 순천에 첫발을 내딛다
+        </h2>
+        <p class="text-[14px] md:text-[16px] text-[#6a696a] leading-relaxed">
+          국내 시공능력 1위 · IF 디자인 어워드 본상 수상 · 아파트 브랜드 평판 2위
+        </p>
+      </div>
+      <div>
+        <p class="text-[12px] md:text-[14px] tracking-[1.5px] text-[#41847f] font-semibold mb-5">브랜드 파워</p>
+        <ol class="space-y-5 md:space-y-6">
+          {brandPower.map((item) => (
+            <li class="flex gap-4 md:gap-5 border-b border-[#ebedeb] pb-5">
+              <span class="text-[#005252] font-extrabold text-[18px] md:text-[20px] min-w-[28px]">{item.no}</span>
+              <p class="text-[14px] md:text-[16px] text-[#434143] leading-relaxed">{item.text}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- OVERVIEW / PRIDE6 -->
+  <section id="overview" class="w-full bg-[#ebedeb] py-16 md:py-24 xl:py-28">
+    <div class="mx-auto max-w-[1200px] 2xl:max-w-[1400px] px-5 md:px-[60px]">
+      <div class="text-center mb-10 md:mb-16">
+        <p class="text-[12px] md:text-[14px] tracking-[1.5px] text-[#41847f] font-semibold mb-3">OVERVIEW</p>
+        <h2 class="text-[24px] md:text-[30px] xl:text-[32px] font-extrabold text-[#003e3e] tracking-[-0.4px] leading-tight mb-3">
+          순천 푸르지오 더 퍼스트만의 PRIDE6
+        </h2>
+        <p class="text-[14px] md:text-[16px] text-[#6a696a]">
+          지역 내 선호도가 높은 중대형 평형 위주 상품 구성
+        </p>
+      </div>
+
+      <ul class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-6 mb-14 md:mb-20">
+        {pride6.map((p) => (
+          <li class="bg-white rounded-lg p-6 md:p-8 border border-[#ebedeb]">
+            <!-- TODO: insert PRIDE icon for key = p.key (location / mart / train / leaf / shield / home-layout) -->
+            <div class="w-10 h-10 md:w-12 md:h-12 bg-[#f2ffff] rounded-full flex items-center justify-center text-[#005252] text-[10px] mb-4">TODO: {p.key}</div>
+            <h3 class="text-[16px] md:text-[18px] xl:text-[20px] font-bold text-[#003e3e] mb-2">{p.title}</h3>
+            <p class="text-[13px] md:text-[14px] xl:text-[15px] text-[#6a696a] leading-relaxed">{p.desc}</p>
+          </li>
+        ))}
+      </ul>
+
+      <div class="grid grid-cols-1 xl:grid-cols-2 gap-10 items-start">
+        <div>
+          <h3 class="text-[18px] md:text-[22px] xl:text-[24px] font-extrabold text-[#003e3e] mb-6">
+            순천 푸르지오 더 퍼스트 개요
+          </h3>
+          <dl class="border-t border-[#323434] text-[13px] md:text-[14px]">
+            {[
+              ["위치", "순천시 덕덕암동 142번지 일원"],
+              ["지역지구", "일반상업지역, 시가지경관지구"],
+              ["대지면적", "16,772.6000 ㎡"],
+              ["건축규모", "지하3층 — 지상 29층 / 6개동 아파트 560세대"],
+              ["전용평형", "아파트 : 560세대 (84Type : 210세대 / 111Type: 350세대)"],
+            ].map(([k, v]) => (
+              <div class="grid grid-cols-[120px_1fr] md:grid-cols-[140px_1fr] border-b border-[#ebedeb] py-3 md:py-4">
+                <dt class="font-semibold text-[#003e3e]">{k}</dt>
+                <dd class="text-[#434143]">{v}</dd>
+              </div>
+            ))}
+          </dl>
+          <p class="mt-6 text-[13px] md:text-[14px] text-[#6a696a] leading-relaxed">
+            70% 이상의 판상형 배치로<br />풍부한 일조량과 맞통풍이 가능하여 환기가 뛰어남
+          </p>
+        </div>
+        <div>
+          <img
+            src={`${ASSETS}/01_overview_prusio03.webp`}
+            alt="순천 푸르지오 더 퍼스트 배치도"
+            width="1600"
+            height="1000"
+            loading="lazy"
+            class="w-full h-auto rounded-md"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENVIRONMENT -->
+  <section class="w-full bg-white py-16 md:py-24 xl:py-28">
+    <div class="mx-auto max-w-[1200px] 2xl:max-w-[1400px] px-5 md:px-[60px]">
+      <div class="text-center mb-10 md:mb-16">
+        <h2 class="text-[24px] md:text-[30px] xl:text-[32px] font-extrabold text-[#003e3e] tracking-[-0.4px]">
+          순천 푸르지오 주변 환경
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-[1fr_1.1fr] gap-8 md:gap-12 items-start">
+        <ul class="divide-y divide-[#ebedeb] border-y border-[#ebedeb]">
+          {environment.map((e) => (
+            <li class="flex gap-4 md:gap-5 py-5 md:py-6">
+              <div class="shrink-0 w-[88px] md:w-[110px] aspect-[4/3] bg-[#ebedeb] rounded overflow-hidden">
+                <img
+                  src={`${ASSETS}/${e.thumb}`}
+                  alt={e.title}
+                  width="440"
+                  height="330"
+                  loading="lazy"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-2 mb-1">
+                  <!-- TODO: insert Environment icon for label = e.label (INFRA / TRAFFIC / PLAN / GREEN / EDU) -->
+                  <span class="inline-flex items-center justify-center w-5 h-5 bg-[#f2ffff] text-[#005252] text-[9px] rounded">●</span>
+                  <span class="text-[11px] md:text-[12px] font-bold tracking-[1.5px] text-[#005252]">{e.label}</span>
+                </div>
+                <h3 class="text-[14px] md:text-[16px] font-bold text-[#003e3e] mb-1">{e.title}</h3>
+                <p class="text-[12px] md:text-[13px] text-[#6a696a] leading-relaxed">{e.desc}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+
+        <div>
+          <img
+            src={`${ASSETS}/01_overview_prusio09.webp`}
+            alt="순천 푸르지오 더 퍼스트 주변 환경 지도"
+            width="1600"
+            height="1400"
+            loading="lazy"
+            class="w-full h-auto rounded-md"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPE -->
+  <section id="type" class="w-full bg-[#ebedeb] py-16 md:py-24 xl:py-28">
+    <div class="mx-auto max-w-[1200px] 2xl:max-w-[1400px] px-5 md:px-[60px]">
+      <div class="text-center mb-10 md:mb-16">
+        <p class="text-[12px] md:text-[14px] tracking-[1.5px] text-[#41847f] font-semibold mb-3">TYPE</p>
+        <h2 class="text-[24px] md:text-[30px] xl:text-[32px] font-extrabold text-[#003e3e] tracking-[-0.4px] leading-tight mb-3">
+          순천이 기다리던 놀라움과 새로움의 푸르지오 더 퍼스트
+        </h2>
+        <p class="text-[16px] md:text-[20px] xl:text-[22px] font-medium text-[#005252] mb-2">
+          지하 3층부터 29층까지, 6개동 560세대
+        </p>
+        <p class="text-[14px] md:text-[16px] text-[#6a696a]">
+          순천 푸르지오 더 퍼스트의 7가지 평형 정보
+        </p>
+      </div>
+
+      <img
+        src={`${ASSETS}/02_type_01.webp`}
+        alt="순천 푸르지오 더 퍼스트 타입 전경"
+        width="2880"
+        height="1200"
+        loading="lazy"
+        class="w-full h-auto rounded-md mb-10 md:mb-14"
+      />
+
+      <div class="space-y-10 md:space-y-14">
+        {types.map((t) => (
+          <article class="bg-white rounded-lg p-6 md:p-10 border border-[#ebedeb]">
+            <header class="flex items-center gap-4 mb-6 md:mb-8">
+              <span
+                class="inline-flex items-center justify-center h-8 md:h-10 px-3 md:px-4 rounded text-white font-extrabold text-[13px] md:text-[15px] tracking-[0.5px]"
+                style={`background-color: ${typeColors[t.code]};`}
+              >
+                {t.code}
+              </span>
+              <div>
+                <h3 class="text-[18px] md:text-[22px] xl:text-[24px] font-extrabold text-[#003e3e]">{t.code} TYPE</h3>
+                <p class="text-[12px] md:text-[13px] text-[#6a696a] mt-0.5">{t.units}세대 ㅣ {t.py}PY</p>
+              </div>
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-6 md:gap-8 mb-6 md:mb-8">
+              <img
+                src={`${ASSETS}/${t.illustration}`}
+                alt={`${t.code} TYPE 평면도`}
+                width="1400"
+                height="900"
+                loading="lazy"
+                class="w-full h-auto rounded"
+              />
+              <img
+                src={`${ASSETS}/${t.map}`}
+                alt={`${t.code} TYPE 단지 내 위치`}
+                width="600"
+                height="600"
+                loading="lazy"
+                class="w-full h-auto rounded"
+              />
+            </div>
+
+            {t.gallery && (
+              <div class="mb-6 md:mb-8">
+                <p class="text-[12px] md:text-[13px] font-semibold text-[#005252] mb-3">세부 갤러리</p>
+                <div class="scroll-hide flex gap-3 md:gap-4 overflow-x-auto snap-x snap-mandatory pb-2">
+                  {t.gallery.map((g, i) => (
+                    <img
+                      src={`${ASSETS}/${g}`}
+                      alt={`${t.code} TYPE 이미지 ${i + 1}`}
+                      width="1200"
+                      height="800"
+                      loading="lazy"
+                      class="snap-start shrink-0 w-[70%] md:w-[45%] xl:w-[30%] h-auto rounded"
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <!-- Spec table — TODO: populate exact ㎡ values per type. -->
+            <div class="border-t border-[#ebedeb] pt-4 md:pt-6">
+              <p class="text-[11px] md:text-[12px] text-[#6a696a] mb-2">면적 정보 (TODO: 정확한 ㎡ 수치 입력 필요)</p>
+              <table class="w-full text-[12px] md:text-[13px]">
+                <tbody class="divide-y divide-[#ebedeb]">
+                  {specRows.map((r) => (
+                    <tr>
+                      <th class="text-left py-2 font-semibold text-[#003e3e] w-[40%]">{r}</th>
+                      <td class="py-2 text-[#6a696a]">— ㎡</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- UTILITY & INFRA -->
+  <section id="utility" class="w-full bg-white">
+    <div class="w-full bg-gradient-to-b from-[#8c7c6e] to-[#7c6c5e] text-white py-16 md:py-24 xl:py-28">
+      <div class="mx-auto max-w-[1200px] 2xl:max-w-[1400px] px-5 md:px-[60px] text-center">
+        <p class="text-[12px] md:text-[14px] tracking-[1.5px] font-semibold mb-3 text-white/80">UTILITY &amp; INFRA</p>
+        <h2 class="text-[24px] md:text-[30px] xl:text-[32px] font-extrabold tracking-[-0.4px] leading-tight mb-3">
+          생활의 품격을 높이는 푸르지오 더 퍼스트의 시설
+        </h2>
+        <p class="text-[16px] md:text-[18px] font-medium text-white/80 mb-1">
+          입주민들을 위한 특별한 생활이 시작됩니다
+        </p>
+        <p class="text-[14px] md:text-[16px] text-white/70">한 차원 높은 자부심이 시작됩니다.</p>
+      </div>
+    </div>
+
+    <div class="mx-auto max-w-[1200px] 2xl:max-w-[1400px] px-5 md:px-[60px] py-12 md:py-16">
+      <img
+        src={`${ASSETS}/03_utility_01.webp`}
+        alt="푸르지오 더 퍼스트 대표 시설"
+        width="2880"
+        height="1400"
+        loading="lazy"
+        class="w-full h-auto rounded-md mb-10 md:mb-14"
+      />
+
+      <ul class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-6 mb-10 md:mb-14">
+        {utilityFeatures.map((u, i) => (
+          <li class="bg-[#ebedeb] rounded-lg p-6 md:p-8">
+            <!-- TODO: insert Utility icon index i (design / eco / safety) -->
+            <div class="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center text-[#8c7c6e] text-[10px] mb-4">TODO: utility-{i + 1}</div>
+            <h3 class="text-[16px] md:text-[18px] font-bold text-[#003e3e] mb-2">{u.title}</h3>
+            <p class="text-[13px] md:text-[14px] text-[#6a696a] leading-relaxed">{u.desc}</p>
+          </li>
+        ))}
+      </ul>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+        <img
+          src={`${ASSETS}/03_utility_02.webp`}
+          alt="조경 및 부대시설"
+          width="1400"
+          height="1000"
+          loading="lazy"
+          class="w-full h-auto rounded-md"
+        />
+        <img
+          src={`${ASSETS}/03_utility_03.webp`}
+          alt="부대시설 상세"
+          width="1400"
+          height="1000"
+          loading="lazy"
+          class="w-full h-auto rounded-md"
+        />
+      </div>
+
+      <p class="mt-10 md:mt-14 text-center text-[13px] md:text-[14px] text-[#6a696a] leading-relaxed max-w-[820px] mx-auto">
+        단지 안에서 누리는 다양한 조경공간과 휴게 편의 시설로 입주민들의 편의와 주거만족을 실현
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER / CONTACT -->
+  <section id="contact" class="w-full bg-[#003e3e] text-white">
+    <div class="mx-auto max-w-[1200px] 2xl:max-w-[1400px] px-5 md:px-[60px] py-16 md:py-24">
+      <div class="text-center mb-10 md:mb-14">
+        <h2 class="text-[22px] md:text-[28px] xl:text-[30px] font-extrabold tracking-[-0.4px] mb-6">
+          순천 푸르지오 더 퍼스트 분양 관련 문의하기
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 max-w-[720px] mx-auto">
+          <div class="bg-white/10 border border-white/20 rounded-lg py-6 md:py-8 px-5">
+            <p class="text-[12px] md:text-[13px] tracking-[1.5px] text-white/70 mb-2">ㅣ   대표전화   ㅣ</p>
+            <p class="text-[24px] md:text-[28px] font-extrabold tracking-[-0.4px] mb-4">1551-5601</p>
+            <a href={PHONE_HREF} class="inline-flex items-center justify-center gap-2 bg-[#f2ffff] text-[#005252] h-12 px-8 rounded-md font-semibold text-[14px] md:text-[15px] hover:bg-white transition-colors">
+              <span class="inline-block w-4 h-4" set:html={phoneIcon} />
+              <span>전화 문의하기</span>
+            </a>
+          </div>
+          <div class="bg-white/10 border border-white/20 rounded-lg py-6 md:py-8 px-5">
+            <p class="text-[12px] md:text-[13px] tracking-[1.5px] text-white/70 mb-2">ㅣ   카카오톡   ㅣ</p>
+            <p class="text-[24px] md:text-[28px] font-extrabold tracking-[-0.4px] mb-4">@firstprusiosuncheon</p>
+            <a href={KAKAO_HREF} target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-[#f2ffff] text-[#005252] h-12 px-8 rounded-md font-semibold text-[14px] md:text-[15px] hover:bg-white transition-colors">
+              <span class="inline-block w-4 h-4" set:html={kakaoIcon} />
+              <span>카카오톡 문의하기</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-start border-t border-white/15 pt-10 md:pt-14">
+        <div class="space-y-5 text-[13px] md:text-[14px]">
+          <div>
+            <p class="text-white/60 mb-1 tracking-[1px]">현  장</p>
+            <p class="font-semibold">순천시 덕암동 142번지</p>
+          </div>
+          <div>
+            <p class="text-white/60 mb-1 tracking-[1px]">견 본 주 택</p>
+            <p class="font-semibold">순천시 풍덕동 303-1</p>
+          </div>
+          <div class="flex flex-wrap items-center gap-6 pt-4">
+            <div>
+              <p class="text-white/60 mb-2 text-[11px] tracking-[1px]">시행</p>
+              <span class="inline-block h-[20px] w-auto text-white" set:html={suncheondcLogo} />
+            </div>
+            <div>
+              <p class="text-white/60 mb-2 text-[11px] tracking-[1px]">시공</p>
+              <span class="inline-block h-[20px] w-auto" set:html={daewooLogo} />
+            </div>
+            <div>
+              <p class="text-white/60 mb-2 text-[11px] tracking-[1px]">신탁</p>
+              <img
+                src={`${ASSETS}/04_footer_koreatrust-logo.webp`}
+                alt="한국토지신탁"
+                width="104"
+                height="24"
+                loading="lazy"
+                class="h-[20px] w-auto"
+              />
+            </div>
+          </div>
+        </div>
+        <div>
+          <img
+            src={`${ASSETS}/04_footer_map.webp`}
+            alt="현장 및 견본주택 위치"
+            width="1400"
+            height="900"
+            loading="lazy"
+            class="w-full h-auto rounded-md"
+          />
+        </div>
+      </div>
+
+      <div class="mt-12 md:mt-16 space-y-4 text-[11px] md:text-[12px] text-white/65 leading-relaxed border-t border-white/15 pt-8 md:pt-10">
+        <p>
+          단지명_순천 푸르지오 더 퍼스트
+          대지위치_전라남도 순천시 덕암동 143번지 일원
+          규모_지하 3층~지상29층, 6개동
+          세대수_560세대
+          주택형_84㎡ A·B·C·D 111㎡ A·B·C
+        </p>
+        <p>
+          본 홍보물 및 웹사이트는 소비자의 이해를 돕기 위해 제작된 사전홍보물로 사업개요 및 규모 등은 인허가 과정이나 실제 시공 시 현장 여건 등에 따라 변경될 수 있으므로 청약 및 계약 전 입주자모집공고 및 견본주택을 방문하시어 확인하시기 바랍니다.
+        </p>
+        <p>
+          하자 등에 따른 소비자 피해보상은 공동주택관리법 제26조, 제37조, 동법 시행령 제36조, 제37조, 제38조 및 집합건물의 소유 및 관리에 관한 법률 제9조의 2, 동법시행령 제5조에 따라 적용됩니다.
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>
