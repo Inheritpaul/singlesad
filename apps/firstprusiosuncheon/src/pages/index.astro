@@ -884,7 +884,7 @@ const daewooLogo = `<svg viewBox="0 0 53 12" fill="none" xmlns="http://www.w3.or
         </div>
 
         <!-- Horizontal scroll gallery (19 images, Figma order) -->
-        <div class="gallery-scroll w-full flex gap-[12px] items-start h-[200px] md:h-[320px] overflow-x-auto overflow-y-clip">
+        <div class="gallery-scroll w-full flex gap-[12px] items-start h-[240px] overflow-x-auto overflow-y-clip">
           <img src={`${ASSET_BASE}/firstprusiosuncheon/84A/02_type_84A_01.webp`} alt="84A 인테리어 01" width="1008" height="1344" loading="lazy" class="block h-full w-auto shrink-0 gallery-snap" />
           <img src={`${ASSET_BASE}/firstprusiosuncheon/84A/02_type_84A_02.webp`} alt="84A 인테리어 02" width="1008" height="1344" loading="lazy" class="block h-full w-auto shrink-0 gallery-snap" />
           <img src={`${ASSET_BASE}/firstprusiosuncheon/84A/02_type_84A_06.webp`} alt="84A 인테리어 06" width="1008" height="1344" loading="lazy" class="block h-full w-auto shrink-0 gallery-snap" />
@@ -1174,7 +1174,7 @@ const daewooLogo = `<svg viewBox="0 0 53 12" fill="none" xmlns="http://www.w3.or
         </div>
 
         <!-- Horizontal scroll gallery (16 images, Figma order: 01,02,05,06,07,09,10,11,13,14,15,16,12,08,04,03) -->
-        <div class="gallery-scroll w-full flex gap-[12px] items-start h-[200px] md:h-[320px] overflow-x-auto overflow-y-clip">
+        <div class="gallery-scroll w-full flex gap-[12px] items-start h-[240px] overflow-x-auto overflow-y-clip">
           <img src={`${ASSET_BASE}/firstprusiosuncheon/84D/02_type_84D_01.webp`} alt="84D 인테리어 01" width="1008" height="1344" loading="lazy" class="block h-full w-auto shrink-0 gallery-snap" />
           <img src={`${ASSET_BASE}/firstprusiosuncheon/84D/02_type_84D_02.webp`} alt="84D 인테리어 02" width="1008" height="1344" loading="lazy" class="block h-full w-auto shrink-0 gallery-snap" />
           <img src={`${ASSET_BASE}/firstprusiosuncheon/84D/02_type_84D_05.webp`} alt="84D 인테리어 05" width="1008" height="1344" loading="lazy" class="block h-full w-auto shrink-0 gallery-snap" />
@@ -1245,7 +1245,7 @@ const daewooLogo = `<svg viewBox="0 0 53 12" fill="none" xmlns="http://www.w3.or
         </div>
 
         <!-- Gallery 19 imgs (Figma order: 01,02,06,07,11,12,16,17,19,18,15,14,13,10,09,08,05,04,03) -->
-        <div class="gallery-scroll w-full flex gap-[12px] items-start h-[200px] md:h-[320px] overflow-x-auto overflow-y-clip">
+        <div class="gallery-scroll w-full flex gap-[12px] items-start h-[240px] overflow-x-auto overflow-y-clip">
           <img src={`${ASSET_BASE}/firstprusiosuncheon/111A/02_type_111A_01.webp`} alt="111A 인테리어 01" width="1008" height="1344" loading="lazy" class="block h-full w-auto shrink-0 gallery-snap" />
           <img src={`${ASSET_BASE}/firstprusiosuncheon/111A/02_type_111A_02.webp`} alt="111A 인테리어 02" width="1008" height="1344" loading="lazy" class="block h-full w-auto shrink-0 gallery-snap" />
           <img src={`${ASSET_BASE}/firstprusiosuncheon/111A/02_type_111A_06.webp`} alt="111A 인테리어 06" width="1008" height="1344" loading="lazy" class="block h-full w-auto shrink-0 gallery-snap" />
@@ -1370,7 +1370,7 @@ const daewooLogo = `<svg viewBox="0 0 53 12" fill="none" xmlns="http://www.w3.or
         </div>
 
         <!-- Gallery 24 imgs (Figma order: 01,02,06,07,11,12,16,17,21,22,24,23,20,19,18,15,14,13,10,09,08,05,04,03) -->
-        <div class="gallery-scroll w-full flex gap-[12px] items-start h-[200px] md:h-[320px] overflow-x-auto overflow-y-clip">
+        <div class="gallery-scroll w-full flex gap-[12px] items-start h-[240px] overflow-x-auto overflow-y-clip">
           <img src={`${ASSET_BASE}/firstprusiosuncheon/111C/02_type_111C_01.webp`} alt="111C 인테리어 01" width="1008" height="1344" loading="lazy" class="block h-full w-auto shrink-0 gallery-snap" />
           <img src={`${ASSET_BASE}/firstprusiosuncheon/111C/02_type_111C_02.webp`} alt="111C 인테리어 02" width="1008" height="1344" loading="lazy" class="block h-full w-auto shrink-0 gallery-snap" />
           <img src={`${ASSET_BASE}/firstprusiosuncheon/111C/02_type_111C_06.webp`} alt="111C 인테리어 06" width="1008" height="1344" loading="lazy" class="block h-full w-auto shrink-0 gallery-snap" />
@@ -1698,12 +1698,16 @@ const daewooLogo = `<svg viewBox="0 0 53 12" fill="none" xmlns="http://www.w3.or
     .pride-card:nth-child(n+4)::before { display: none; }
   }
 
-  /* section08 type-detail horizontal scroll galleries */
+  /* section08 type-detail horizontal scroll galleries — visible thin scrollbar as scroll indicator */
   .gallery-scroll {
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    scrollbar-width: thin;
+    scrollbar-color: #434143 #ebedeb;
   }
-  .gallery-scroll::-webkit-scrollbar { display: none; }
+  .gallery-scroll::-webkit-scrollbar { height: 6px; }
+  .gallery-scroll::-webkit-scrollbar-track { background: #ebedeb; border-radius: 3px; }
+  .gallery-scroll::-webkit-scrollbar-thumb { background: #434143; border-radius: 3px; }
+  .gallery-scroll::-webkit-scrollbar-thumb:hover { background: #6a696a; }
   .gallery-snap { scroll-snap-align: start; }
 </style>
