@@ -634,7 +634,152 @@ const daewooLogo = `<svg viewBox="0 0 53 12" fill="none" xmlns="http://www.w3.or
         class="w-full h-auto object-cover aspect-[3078/1358]"
       />
     </div>
-    <!-- 08-list — to be added -->
+    <!-- 08-list -->
+    <div class="w-full flex flex-col items-center gap-[40px] px-[20px] py-[40px] md:px-0">
+      <!-- Title (desktop one-line, mobile two-line) -->
+      <p class="hidden md:block w-full text-center text-[32px] leading-[normal] tracking-[-0.4px]" style="font-weight: 800;"><span class="text-[#6a696a]">순천 푸르지오 더 퍼스트의 </span><span class="text-[#005252]">7가지 평형 정보</span></p>
+      <div class="md:hidden w-full text-center text-[28px] tracking-[-0.4px]" style="font-weight: 800;">
+        <p class="text-[#6a696a] leading-[normal]">순천 푸르지오 더 퍼스트의</p>
+        <p class="text-[#005252] leading-[normal]">7가지 평형 정보</p>
+      </div>
+
+      <!-- Cards grid -->
+      <div class="w-full flex flex-col gap-[20px]">
+        <!-- Group A: 84-series (4 cards) — mobile 2x2, desktop 1x4 -->
+        <div class="w-full grid grid-cols-2 md:grid-cols-4 gap-[20px]">
+          <!-- 84A (highlighted with teal border on desktop) -->
+          <div class="flex flex-col items-center gap-[32px] py-[20px] md:py-[40px] md:border-2 md:border-solid md:border-[#005252]">
+            <img
+              src={`${ASSET_BASE}/firstprusiosuncheon/84A/02_type_map_84A.webp`}
+              alt="84A 평면도 미리보기"
+              width="230"
+              height="170"
+              loading="lazy"
+              class="block w-[162px] h-[120px] md:w-[230px] md:h-[170px] object-cover"
+            />
+            <div class="w-full flex flex-col items-center gap-[4px] text-center tracking-[-0.4px]">
+              <div class="w-full flex justify-center items-start gap-[8px] text-[24px] leading-[normal] whitespace-nowrap" style="font-weight: 800;">
+                <span class="text-[#434143]">84A</span>
+                <span class="text-[#6a696a]">TYPE</span>
+              </div>
+              <p class="w-full text-[#434143]/40 text-[14px] leading-[normal]" style="font-weight: 500;">128세대&nbsp;&nbsp;&nbsp;ㅣ&nbsp;&nbsp;&nbsp;33.98PY</p>
+            </div>
+          </div>
+          <!-- 84B -->
+          <div class="flex flex-col items-center gap-[32px] py-[20px] md:py-[40px]">
+            <img
+              src={`${ASSET_BASE}/firstprusiosuncheon/02_type_map_84B.webp`}
+              alt="84B 평면도 미리보기"
+              width="222"
+              height="170"
+              loading="lazy"
+              class="block w-[156px] h-[120px] md:w-[222px] md:h-[170px] object-cover"
+            />
+            <div class="w-full flex flex-col items-center gap-[4px] text-center tracking-[-0.4px]">
+              <div class="w-full flex justify-center items-start gap-[8px] text-[24px] leading-[normal] whitespace-nowrap" style="font-weight: 800;">
+                <span class="text-[#434143]">84B</span>
+                <span class="text-[#6a696a]">TYPE</span>
+              </div>
+              <p class="w-full text-[#434143]/40 text-[14px] leading-[normal]" style="font-weight: 500;">26세대&nbsp;&nbsp;&nbsp;ㅣ&nbsp;&nbsp;&nbsp;34.15PY</p>
+            </div>
+          </div>
+          <!-- 84C -->
+          <div class="flex flex-col items-center gap-[32px] py-[20px] md:py-[40px]">
+            <img
+              src={`${ASSET_BASE}/firstprusiosuncheon/02_type_map_84C.webp`}
+              alt="84C 평면도 미리보기"
+              width="232"
+              height="170"
+              loading="lazy"
+              class="block w-[163px] h-[120px] md:w-[232px] md:h-[170px] object-cover"
+            />
+            <div class="w-full flex flex-col items-center gap-[4px] text-center tracking-[-0.4px]">
+              <div class="w-full flex justify-center items-start gap-[8px] text-[24px] leading-[normal] whitespace-nowrap" style="font-weight: 800;">
+                <span class="text-[#434143]">84C</span>
+                <span class="text-[#6a696a]">TYPE</span>
+              </div>
+              <p class="w-full text-[#434143]/40 text-[14px] leading-[normal]" style="font-weight: 500;">28세대&nbsp;&nbsp;&nbsp;ㅣ&nbsp;&nbsp;&nbsp;34.11PY</p>
+            </div>
+          </div>
+          <!-- 84D -->
+          <div class="flex flex-col items-center gap-[32px] py-[20px] md:py-[40px]">
+            <img
+              src={`${ASSET_BASE}/firstprusiosuncheon/84D/02_type_map_84D.webp`}
+              alt="84D 평면도 미리보기"
+              width="181"
+              height="170"
+              loading="lazy"
+              class="block w-[128px] h-[120px] md:w-[181px] md:h-[170px] object-cover"
+            />
+            <div class="w-full flex flex-col items-center gap-[4px] text-center tracking-[-0.4px]">
+              <div class="w-full flex justify-center items-start gap-[8px] text-[24px] leading-[normal] whitespace-nowrap" style="font-weight: 800;">
+                <span class="text-[#434143]">84D</span>
+                <span class="text-[#6a696a]">TYPE</span>
+              </div>
+              <p class="w-full text-[#434143]/40 text-[14px] leading-[normal]" style="font-weight: 500;">28세대&nbsp;&nbsp;&nbsp;ㅣ&nbsp;&nbsp;&nbsp;33.89PY</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Group B: 111-series (3 cards) — mobile 2x2 with 111C full-width row, desktop 1x3 with px-80 + gap-40 -->
+        <div class="w-full grid grid-cols-2 md:grid-cols-3 gap-y-[20px] gap-x-[20px] md:gap-x-[40px] md:px-[80px]">
+          <!-- 111A -->
+          <div class="flex flex-col items-center gap-[32px] py-[20px] md:py-[40px]">
+            <img
+              src={`${ASSET_BASE}/firstprusiosuncheon/02_type_map_111A.webp`}
+              alt="111A 평면도 미리보기"
+              width="199"
+              height="170"
+              loading="lazy"
+              class="block w-[141px] h-[120px] md:w-[199px] md:h-[170px] object-cover"
+            />
+            <div class="w-full flex flex-col items-center gap-[4px] text-center tracking-[-0.4px]">
+              <div class="w-full flex justify-center items-start gap-[8px] text-[24px] leading-[normal] whitespace-nowrap" style="font-weight: 800;">
+                <span class="text-[#434143]">111A</span>
+                <span class="text-[#6a696a]">TYPE</span>
+              </div>
+              <p class="w-full text-[#434143]/40 text-[14px] leading-[normal]" style="font-weight: 500;">234세대&nbsp;&nbsp;&nbsp;ㅣ&nbsp;&nbsp;&nbsp;42.70PY</p>
+            </div>
+          </div>
+          <!-- 111B -->
+          <div class="flex flex-col items-center gap-[32px] py-[20px] md:py-[40px]">
+            <img
+              src={`${ASSET_BASE}/firstprusiosuncheon/111B/02_type_map_111B.webp`}
+              alt="111B 평면도 미리보기"
+              width="225"
+              height="170"
+              loading="lazy"
+              class="block w-[159px] h-[120px] md:w-[225px] md:h-[170px] object-cover"
+            />
+            <div class="w-full flex flex-col items-center gap-[4px] text-center tracking-[-0.4px]">
+              <div class="w-full flex justify-center items-start gap-[8px] text-[24px] leading-[normal] whitespace-nowrap" style="font-weight: 800;">
+                <span class="text-[#434143]">111B</span>
+                <span class="text-[#6a696a]">TYPE</span>
+              </div>
+              <p class="w-full text-[#434143]/40 text-[14px] leading-[normal]" style="font-weight: 500;">96세대&nbsp;&nbsp;&nbsp;ㅣ&nbsp;&nbsp;43.40PY</p>
+            </div>
+          </div>
+          <!-- 111C -->
+          <div class="flex flex-col items-center gap-[32px] py-[20px] md:py-[40px] col-span-2 md:col-span-1">
+            <img
+              src={`${ASSET_BASE}/firstprusiosuncheon/111C/02_type_map_111C.webp`}
+              alt="111C 평면도 미리보기"
+              width="281"
+              height="170"
+              loading="lazy"
+              class="block w-[198px] h-[120px] md:w-[281px] md:h-[170px] object-cover"
+            />
+            <div class="w-full flex flex-col items-center gap-[4px] text-center tracking-[-0.4px]">
+              <div class="w-full flex justify-center items-start gap-[8px] text-[24px] leading-[normal] whitespace-nowrap" style="font-weight: 800;">
+                <span class="text-[#434143]">111C</span>
+                <span class="text-[#6a696a]">TYPE</span>
+              </div>
+              <p class="w-full text-[#434143]/40 text-[14px] leading-[normal]" style="font-weight: 500;">20세대&nbsp;&nbsp;&nbsp;ㅣ&nbsp;&nbsp;&nbsp;42.80PY</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- 08-84A — to be added -->
     <!-- 08-84B — to be added -->
     <!-- 08-84C — to be added -->
