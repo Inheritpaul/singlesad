@@ -780,7 +780,118 @@ const daewooLogo = `<svg viewBox="0 0 53 12" fill="none" xmlns="http://www.w3.or
         </div>
       </div>
     </div>
-    <!-- 08-84A — to be added -->
+    <!-- 08-84A -->
+    <div class="w-full">
+      <div class="h-[1.5px] w-full bg-[#a19589]" aria-hidden="true"></div>
+      <div class="w-full flex flex-col gap-[60px] pt-[40px] pb-[80px]">
+
+        <!-- Type header -->
+        <div class="w-full flex gap-[24px] items-center md:px-[60px]">
+          <div class="bg-[#a8e587] flex gap-[9px] items-end px-[16px] py-[8px] text-[#434143] tracking-[-0.4px]">
+            <p class="text-[40px] leading-[normal] whitespace-nowrap" style="font-weight: 800;">84A</p>
+            <p class="text-[24px] leading-[normal] w-[57px]" style="font-weight: 400;">TYPE</p>
+          </div>
+          <div class="w-[8px] self-stretch flex flex-col" aria-hidden="true">
+            <div class="flex-1 bg-[#005252]"></div>
+            <div class="flex-1 bg-[#8c7c6e]"></div>
+          </div>
+          <div class="flex flex-col gap-[4px] items-start justify-center text-[#6a696a] tracking-[-0.4px] whitespace-nowrap">
+            <p class="text-[24px] leading-[normal]" style="font-weight: 800;">128세대</p>
+            <p class="text-[16px] leading-[normal]" style="font-weight: 400;">(33.98PY)</p>
+          </div>
+        </div>
+
+        <!-- Main content: mobile stacked (map first), desktop 2-col (spec/illust left, map right) -->
+        <div class="w-full flex flex-col md:flex-row gap-[40px] md:items-start md:px-[60px]">
+          <img
+            src={`${ASSET_BASE}/firstprusiosuncheon/84A/02_type_map_84A.webp`}
+            alt="84A 동·호수 배치도"
+            width="1648"
+            height="1218"
+            loading="lazy"
+            class="block w-full md:flex-1 md:min-w-0 md:order-2 aspect-[1648/1218] object-cover"
+          />
+          <div class="w-full md:w-[430px] md:shrink-0 md:order-1 flex flex-col gap-[39px]">
+            <!-- Spec table -->
+            <div class="w-full h-[186px] flex flex-col border-t-2 border-b-2 border-[#8c7c6e]">
+              <div class="flex-1 min-h-0 flex items-stretch w-full">
+                <div class="bg-[#ebedeb] border-[#323434] border-b-[0.5px] border-r-[0.5px] border-t-[0.5px] flex items-center justify-center py-[8px] w-[137px] shrink-0">
+                  <p class="text-[#434143] text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px]" style="font-weight: 800;">전용면적</p>
+                </div>
+                <div class="border-[#323434] border-b-[0.5px] border-l-[0.5px] border-t-[0.5px] flex items-center flex-1 min-w-0 pl-[20px] py-[8px]">
+                  <p class="text-[#434143] text-[14px] md:text-[16px] leading-[normal] tracking-[-0.4px]" style="font-weight: 500;">84.9645 ㎡</p>
+                </div>
+              </div>
+              <div class="flex-1 min-h-0 flex items-stretch w-full">
+                <div class="bg-[#ebedeb] border-[#323434] border-b-[0.5px] border-r-[0.5px] border-t-[0.5px] flex items-center justify-center py-[8px] w-[137px] shrink-0">
+                  <p class="text-[#434143] text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px]" style="font-weight: 800;">주거공용면적</p>
+                </div>
+                <div class="border-[#323434] border-b-[0.5px] border-l-[0.5px] border-t-[0.5px] flex items-center flex-1 min-w-0 pl-[20px] py-[8px]">
+                  <p class="text-[#434143] text-[14px] md:text-[16px] leading-[normal] tracking-[-0.4px]" style="font-weight: 500;">27.3715 ㎡</p>
+                </div>
+              </div>
+              <div class="flex-1 min-h-0 flex items-stretch w-full">
+                <div class="bg-[#ebedeb] border-[#323434] border-b-[0.5px] border-r-[0.5px] border-t-[0.5px] flex items-center justify-center py-[8px] w-[137px] shrink-0">
+                  <p class="text-[#434143] text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px]" style="font-weight: 800;">공급면적</p>
+                </div>
+                <div class="border-[#323434] border-b-[0.5px] border-l-[0.5px] border-t-[0.5px] flex items-center flex-1 min-w-0 pl-[20px] py-[8px]">
+                  <p class="text-[#434143] text-[14px] md:text-[16px] leading-[normal] tracking-[-0.4px]" style="font-weight: 500;">112.3360 ㎡</p>
+                </div>
+              </div>
+              <div class="flex-1 min-h-0 flex items-stretch w-full">
+                <div class="bg-[#ebedeb] border-[#323434] border-b-[0.5px] border-r-[0.5px] border-t-[0.5px] flex items-center justify-center py-[8px] w-[137px] shrink-0">
+                  <p class="text-[#434143] text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px]" style="font-weight: 800;">기타공용면적</p>
+                </div>
+                <div class="border-[#323434] border-b-[0.5px] border-l-[0.5px] border-t-[0.5px] flex items-center flex-1 min-w-0 pl-[20px] py-[8px]">
+                  <p class="text-[#434143] text-[14px] md:text-[16px] leading-[normal] tracking-[-0.4px]" style="font-weight: 500;">62.7805 ㎡</p>
+                </div>
+              </div>
+              <div class="flex-1 min-h-0 flex items-stretch w-full">
+                <div class="bg-[#ebedeb] border-[#323434] border-b-[0.5px] border-r-[0.5px] border-t-[0.5px] flex items-center justify-center py-[8px] w-[137px] shrink-0">
+                  <p class="text-[#434143] text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px]" style="font-weight: 800;">계약면적</p>
+                </div>
+                <div class="border-[#323434] border-b-[0.5px] border-l-[0.5px] border-t-[0.5px] flex items-center flex-1 min-w-0 pl-[20px] py-[8px]">
+                  <p class="text-[#434143] text-[14px] md:text-[16px] leading-[normal] tracking-[-0.4px]" style="font-weight: 500;">175.1165 ㎡</p>
+                </div>
+              </div>
+            </div>
+            <!-- Illustration (floor plan) -->
+            <img
+              src={`${ASSET_BASE}/firstprusiosuncheon/84A/02_type_illustration_84A.webp`}
+              alt="84A 평면도 일러스트레이션"
+              width="744"
+              height="462"
+              loading="lazy"
+              class="block w-full aspect-[372/230.91] object-contain"
+            />
+          </div>
+        </div>
+
+        <!-- Horizontal scroll gallery (19 images, Figma order) -->
+        <div class="gallery-scroll w-full flex gap-[12px] items-start h-[200px] md:h-[320px] md:px-[60px] overflow-x-auto overflow-y-clip">
+          <img src={`${ASSET_BASE}/firstprusiosuncheon/84A/02_type_84A_01.webp`} alt="84A 인테리어 01" width="1008" height="1344" loading="lazy" class="block aspect-[1008/1344] h-full shrink-0 object-cover gallery-snap" />
+          <img src={`${ASSET_BASE}/firstprusiosuncheon/84A/02_type_84A_02.webp`} alt="84A 인테리어 02" width="1008" height="1344" loading="lazy" class="block aspect-[1008/1344] h-full shrink-0 object-cover gallery-snap" />
+          <img src={`${ASSET_BASE}/firstprusiosuncheon/84A/02_type_84A_06.webp`} alt="84A 인테리어 06" width="1008" height="1344" loading="lazy" class="block aspect-[1008/1344] h-full shrink-0 object-cover gallery-snap" />
+          <img src={`${ASSET_BASE}/firstprusiosuncheon/84A/02_type_84A_07.webp`} alt="84A 인테리어 07" width="1008" height="1344" loading="lazy" class="block aspect-[1008/1344] h-full shrink-0 object-cover gallery-snap" />
+          <img src={`${ASSET_BASE}/firstprusiosuncheon/84A/02_type_84A_11.webp`} alt="84A 인테리어 11" width="1008" height="1344" loading="lazy" class="block aspect-[1008/1344] h-full shrink-0 object-cover gallery-snap" />
+          <img src={`${ASSET_BASE}/firstprusiosuncheon/84A/02_type_84A_12.webp`} alt="84A 인테리어 12" width="1008" height="1344" loading="lazy" class="block aspect-[1008/1344] h-full shrink-0 object-cover gallery-snap" />
+          <img src={`${ASSET_BASE}/firstprusiosuncheon/84A/02_type_84A_16.webp`} alt="84A 인테리어 16" width="1008" height="1344" loading="lazy" class="block aspect-[1008/1344] h-full shrink-0 object-cover gallery-snap" />
+          <img src={`${ASSET_BASE}/firstprusiosuncheon/84A/02_type_84A_17.webp`} alt="84A 인테리어 17" width="1008" height="1344" loading="lazy" class="block aspect-[1008/1344] h-full shrink-0 object-cover gallery-snap" />
+          <img src={`${ASSET_BASE}/firstprusiosuncheon/84A/02_type_84A_19.webp`} alt="84A 인테리어 19" width="1008" height="1344" loading="lazy" class="block aspect-[1008/1344] h-full shrink-0 object-cover gallery-snap" />
+          <img src={`${ASSET_BASE}/firstprusiosuncheon/84A/02_type_84A_18.webp`} alt="84A 인테리어 18" width="1008" height="1344" loading="lazy" class="block aspect-[1008/1344] h-full shrink-0 object-cover gallery-snap" />
+          <img src={`${ASSET_BASE}/firstprusiosuncheon/84A/02_type_84A_15.webp`} alt="84A 인테리어 15" width="1008" height="1344" loading="lazy" class="block aspect-[1008/1344] h-full shrink-0 object-cover gallery-snap" />
+          <img src={`${ASSET_BASE}/firstprusiosuncheon/84A/02_type_84A_14.webp`} alt="84A 인테리어 14" width="1008" height="1344" loading="lazy" class="block aspect-[1008/1344] h-full shrink-0 object-cover gallery-snap" />
+          <img src={`${ASSET_BASE}/firstprusiosuncheon/84A/02_type_84A_13.webp`} alt="84A 인테리어 13" width="1008" height="1344" loading="lazy" class="block aspect-[1008/1344] h-full shrink-0 object-cover gallery-snap" />
+          <img src={`${ASSET_BASE}/firstprusiosuncheon/84A/02_type_84A_10.webp`} alt="84A 인테리어 10" width="1008" height="1344" loading="lazy" class="block aspect-[1008/1344] h-full shrink-0 object-cover gallery-snap" />
+          <img src={`${ASSET_BASE}/firstprusiosuncheon/84A/02_type_84A_09.webp`} alt="84A 인테리어 09" width="1008" height="1344" loading="lazy" class="block aspect-[1008/1344] h-full shrink-0 object-cover gallery-snap" />
+          <img src={`${ASSET_BASE}/firstprusiosuncheon/84A/02_type_84A_08.webp`} alt="84A 인테리어 08" width="1008" height="1344" loading="lazy" class="block aspect-[1008/1344] h-full shrink-0 object-cover gallery-snap" />
+          <img src={`${ASSET_BASE}/firstprusiosuncheon/84A/02_type_84A_05.webp`} alt="84A 인테리어 05" width="1008" height="1344" loading="lazy" class="block aspect-[1008/1344] h-full shrink-0 object-cover gallery-snap" />
+          <img src={`${ASSET_BASE}/firstprusiosuncheon/84A/02_type_84A_04.webp`} alt="84A 인테리어 04" width="1008" height="1344" loading="lazy" class="block aspect-[1008/1344] h-full shrink-0 object-cover gallery-snap" />
+          <img src={`${ASSET_BASE}/firstprusiosuncheon/84A/02_type_84A_03.webp`} alt="84A 인테리어 03" width="1008" height="1344" loading="lazy" class="block aspect-[1008/1344] h-full shrink-0 object-cover gallery-snap" />
+        </div>
+
+      </div>
+    </div>
     <!-- 08-84B — to be added -->
     <!-- 08-84C — to be added -->
     <!-- 08-84D — to be added -->
@@ -1085,4 +1196,13 @@ const daewooLogo = `<svg viewBox="0 0 53 12" fill="none" xmlns="http://www.w3.or
     .pride-card:nth-child(3n)::after { display: none; }
     .pride-card:nth-child(n+4)::before { display: none; }
   }
+
+  /* section08 type-detail horizontal scroll galleries */
+  .gallery-scroll {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .gallery-scroll::-webkit-scrollbar { display: none; }
+  .gallery-snap { scroll-snap-align: start; }
 </style>
