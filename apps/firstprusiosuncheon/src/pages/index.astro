@@ -892,8 +892,184 @@ const daewooLogo = `<svg viewBox="0 0 53 12" fill="none" xmlns="http://www.w3.or
 
       </div>
     </div>
-    <!-- 08-84B — to be added -->
-    <!-- 08-84C — to be added -->
+    <!-- 08-84B -->
+    <div class="w-full">
+      <div class="h-[1.5px] w-full bg-[#a19589]" aria-hidden="true"></div>
+      <div class="w-full flex flex-col gap-[60px] pt-[40px] pb-[80px]">
+
+        <!-- Type header -->
+        <div class="w-full flex gap-[24px] items-center md:px-[60px]">
+          <div class="bg-[#ffcc9f] flex gap-[9px] items-end px-[16px] py-[8px] text-[#434143] tracking-[-0.4px]">
+            <p class="text-[40px] leading-[normal] whitespace-nowrap" style="font-weight: 800;">84B</p>
+            <p class="text-[24px] leading-[normal] w-[57px]" style="font-weight: 400;">TYPE</p>
+          </div>
+          <div class="w-[8px] self-stretch flex flex-col" aria-hidden="true">
+            <div class="flex-1 bg-[#005252]"></div>
+            <div class="flex-1 bg-[#8c7c6e]"></div>
+          </div>
+          <div class="flex flex-col gap-[4px] items-start justify-center text-[#6a696a] tracking-[-0.4px] whitespace-nowrap">
+            <p class="text-[24px] leading-[normal]" style="font-weight: 800;">26세대</p>
+            <p class="text-[16px] leading-[normal]" style="font-weight: 400;">(34.15PY)</p>
+          </div>
+        </div>
+
+        <!-- Main content: mobile (map → spec → illustration), desktop (spec/illust left, map right) -->
+        <div class="w-full flex flex-col md:flex-row gap-[40px] md:items-start md:px-[60px]">
+          <img
+            src={`${ASSET_BASE}/firstprusiosuncheon/02_type_map_84B.webp`}
+            alt="84B 동·호수 배치도"
+            width="1298"
+            height="996"
+            loading="lazy"
+            class="block w-full md:flex-1 md:min-w-0 md:order-2 aspect-[1298/996] object-cover"
+          />
+          <div class="w-full md:w-[430px] md:shrink-0 md:order-1 flex flex-col gap-[39px]">
+            <!-- Spec table -->
+            <div class="w-full h-[186px] flex flex-col border-t-2 border-b-2 border-[#8c7c6e]">
+              <div class="flex-1 min-h-0 flex items-stretch w-full">
+                <div class="bg-[#ebedeb] border-[#323434] border-b-[0.5px] border-r-[0.5px] border-t-[0.5px] flex items-center justify-center py-[8px] w-[137px] shrink-0">
+                  <p class="text-[#434143] text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px]" style="font-weight: 800;">전용면적</p>
+                </div>
+                <div class="border-[#323434] border-b-[0.5px] border-l-[0.5px] border-t-[0.5px] flex items-center flex-1 min-w-0 pl-[20px] py-[8px]">
+                  <p class="text-[#434143] text-[14px] md:text-[16px] leading-[normal] tracking-[-0.4px]" style="font-weight: 500;">84.9570 ㎡</p>
+                </div>
+              </div>
+              <div class="flex-1 min-h-0 flex items-stretch w-full">
+                <div class="bg-[#ebedeb] border-[#323434] border-b-[0.5px] border-r-[0.5px] border-t-[0.5px] flex items-center justify-center py-[8px] w-[137px] shrink-0">
+                  <p class="text-[#434143] text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px]" style="font-weight: 800;">주거공용면적</p>
+                </div>
+                <div class="border-[#323434] border-b-[0.5px] border-l-[0.5px] border-t-[0.5px] flex items-center flex-1 min-w-0 pl-[20px] py-[8px]">
+                  <p class="text-[#434143] text-[14px] md:text-[16px] leading-[normal] tracking-[-0.4px]" style="font-weight: 500;">27.9615 ㎡</p>
+                </div>
+              </div>
+              <div class="flex-1 min-h-0 flex items-stretch w-full">
+                <div class="bg-[#ebedeb] border-[#323434] border-b-[0.5px] border-r-[0.5px] border-t-[0.5px] flex items-center justify-center py-[8px] w-[137px] shrink-0">
+                  <p class="text-[#434143] text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px]" style="font-weight: 800;">공급면적</p>
+                </div>
+                <div class="border-[#323434] border-b-[0.5px] border-l-[0.5px] border-t-[0.5px] flex items-center flex-1 min-w-0 pl-[20px] py-[8px]">
+                  <p class="text-[#434143] text-[14px] md:text-[16px] leading-[normal] tracking-[-0.4px]" style="font-weight: 500;">112.9185 ㎡</p>
+                </div>
+              </div>
+              <div class="flex-1 min-h-0 flex items-stretch w-full">
+                <div class="bg-[#ebedeb] border-[#323434] border-b-[0.5px] border-r-[0.5px] border-t-[0.5px] flex items-center justify-center py-[8px] w-[137px] shrink-0">
+                  <p class="text-[#434143] text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px]" style="font-weight: 800;">기타공용면적</p>
+                </div>
+                <div class="border-[#323434] border-b-[0.5px] border-l-[0.5px] border-t-[0.5px] flex items-center flex-1 min-w-0 pl-[20px] py-[8px]">
+                  <p class="text-[#434143] text-[14px] md:text-[16px] leading-[normal] tracking-[-0.4px]" style="font-weight: 500;">62.7749 ㎡</p>
+                </div>
+              </div>
+              <div class="flex-1 min-h-0 flex items-stretch w-full">
+                <div class="bg-[#ebedeb] border-[#323434] border-b-[0.5px] border-r-[0.5px] border-t-[0.5px] flex items-center justify-center py-[8px] w-[137px] shrink-0">
+                  <p class="text-[#434143] text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px]" style="font-weight: 800;">계약면적</p>
+                </div>
+                <div class="border-[#323434] border-b-[0.5px] border-l-[0.5px] border-t-[0.5px] flex items-center flex-1 min-w-0 pl-[20px] py-[8px]">
+                  <p class="text-[#434143] text-[14px] md:text-[16px] leading-[normal] tracking-[-0.4px]" style="font-weight: 500;">175.6934 ㎡</p>
+                </div>
+              </div>
+            </div>
+            <!-- Illustration (floor plan) -->
+            <img
+              src={`${ASSET_BASE}/firstprusiosuncheon/02_type_illustration_84B.webp`}
+              alt="84B 평면도 일러스트레이션"
+              width="744"
+              height="462"
+              loading="lazy"
+              class="block w-full aspect-[372/230.91] object-contain"
+            />
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- 08-84C -->
+    <div class="w-full">
+      <div class="h-[1.5px] w-full bg-[#a19589]" aria-hidden="true"></div>
+      <div class="w-full flex flex-col gap-[60px] pt-[40px] pb-[80px]">
+
+        <!-- Type header -->
+        <div class="w-full flex gap-[24px] items-center md:px-[60px]">
+          <div class="bg-[#c9bdb8] flex gap-[9px] items-end px-[16px] py-[8px] text-[#434143] tracking-[-0.4px]">
+            <p class="text-[40px] leading-[normal] whitespace-nowrap" style="font-weight: 800;">84C</p>
+            <p class="text-[24px] leading-[normal] w-[57px]" style="font-weight: 400;">TYPE</p>
+          </div>
+          <div class="w-[8px] self-stretch flex flex-col" aria-hidden="true">
+            <div class="flex-1 bg-[#005252]"></div>
+            <div class="flex-1 bg-[#8c7c6e]"></div>
+          </div>
+          <div class="flex flex-col gap-[4px] items-start justify-center text-[#6a696a] tracking-[-0.4px] whitespace-nowrap">
+            <p class="text-[24px] leading-[normal]" style="font-weight: 800;">28세대</p>
+            <p class="text-[16px] leading-[normal]" style="font-weight: 400;">(34.11PY)</p>
+          </div>
+        </div>
+
+        <!-- Main content: mobile (map → spec → illustration), desktop (spec/illust left, map right) -->
+        <div class="w-full flex flex-col md:flex-row gap-[40px] md:items-start md:px-[60px]">
+          <img
+            src={`${ASSET_BASE}/firstprusiosuncheon/02_type_map_84C.webp`}
+            alt="84C 동·호수 배치도"
+            width="1280"
+            height="940"
+            loading="lazy"
+            class="block w-full md:flex-1 md:min-w-0 md:order-2 aspect-[1280/940] object-cover"
+          />
+          <div class="w-full md:w-[430px] md:shrink-0 md:order-1 flex flex-col gap-[39px]">
+            <!-- Spec table -->
+            <div class="w-full h-[186px] flex flex-col border-t-2 border-b-2 border-[#8c7c6e]">
+              <div class="flex-1 min-h-0 flex items-stretch w-full">
+                <div class="bg-[#ebedeb] border-[#323434] border-b-[0.5px] border-r-[0.5px] border-t-[0.5px] flex items-center justify-center py-[8px] w-[137px] shrink-0">
+                  <p class="text-[#434143] text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px]" style="font-weight: 800;">전용면적</p>
+                </div>
+                <div class="border-[#323434] border-b-[0.5px] border-l-[0.5px] border-t-[0.5px] flex items-center flex-1 min-w-0 pl-[20px] py-[8px]">
+                  <p class="text-[#434143] text-[14px] md:text-[16px] leading-[normal] tracking-[-0.4px]" style="font-weight: 500;">84.8720 ㎡</p>
+                </div>
+              </div>
+              <div class="flex-1 min-h-0 flex items-stretch w-full">
+                <div class="bg-[#ebedeb] border-[#323434] border-b-[0.5px] border-r-[0.5px] border-t-[0.5px] flex items-center justify-center py-[8px] w-[137px] shrink-0">
+                  <p class="text-[#434143] text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px]" style="font-weight: 800;">주거공용면적</p>
+                </div>
+                <div class="border-[#323434] border-b-[0.5px] border-l-[0.5px] border-t-[0.5px] flex items-center flex-1 min-w-0 pl-[20px] py-[8px]">
+                  <p class="text-[#434143] text-[14px] md:text-[16px] leading-[normal] tracking-[-0.4px]" style="font-weight: 500;">27.9192 ㎡</p>
+                </div>
+              </div>
+              <div class="flex-1 min-h-0 flex items-stretch w-full">
+                <div class="bg-[#ebedeb] border-[#323434] border-b-[0.5px] border-r-[0.5px] border-t-[0.5px] flex items-center justify-center py-[8px] w-[137px] shrink-0">
+                  <p class="text-[#434143] text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px]" style="font-weight: 800;">공급면적</p>
+                </div>
+                <div class="border-[#323434] border-b-[0.5px] border-l-[0.5px] border-t-[0.5px] flex items-center flex-1 min-w-0 pl-[20px] py-[8px]">
+                  <p class="text-[#434143] text-[14px] md:text-[16px] leading-[normal] tracking-[-0.4px]" style="font-weight: 500;">112.7912 ㎡</p>
+                </div>
+              </div>
+              <div class="flex-1 min-h-0 flex items-stretch w-full">
+                <div class="bg-[#ebedeb] border-[#323434] border-b-[0.5px] border-r-[0.5px] border-t-[0.5px] flex items-center justify-center py-[8px] w-[137px] shrink-0">
+                  <p class="text-[#434143] text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px]" style="font-weight: 800;">기타공용면적</p>
+                </div>
+                <div class="border-[#323434] border-b-[0.5px] border-l-[0.5px] border-t-[0.5px] flex items-center flex-1 min-w-0 pl-[20px] py-[8px]">
+                  <p class="text-[#434143] text-[14px] md:text-[16px] leading-[normal] tracking-[-0.4px]" style="font-weight: 500;">62.7121 ㎡</p>
+                </div>
+              </div>
+              <div class="flex-1 min-h-0 flex items-stretch w-full">
+                <div class="bg-[#ebedeb] border-[#323434] border-b-[0.5px] border-r-[0.5px] border-t-[0.5px] flex items-center justify-center py-[8px] w-[137px] shrink-0">
+                  <p class="text-[#434143] text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px]" style="font-weight: 800;">계약면적</p>
+                </div>
+                <div class="border-[#323434] border-b-[0.5px] border-l-[0.5px] border-t-[0.5px] flex items-center flex-1 min-w-0 pl-[20px] py-[8px]">
+                  <p class="text-[#434143] text-[14px] md:text-[16px] leading-[normal] tracking-[-0.4px]" style="font-weight: 500;">175.5034 ㎡</p>
+                </div>
+              </div>
+            </div>
+            <!-- Illustration (floor plan) -->
+            <img
+              src={`${ASSET_BASE}/firstprusiosuncheon/02_type_illustration_84C.webp`}
+              alt="84C 평면도 일러스트레이션"
+              width="744"
+              height="462"
+              loading="lazy"
+              class="block w-full aspect-[372/230.91] object-contain"
+            />
+          </div>
+        </div>
+
+      </div>
+    </div>
     <!-- 08-84D — to be added -->
     <!-- 08-111A — to be added -->
     <!-- 08-111B — to be added -->
