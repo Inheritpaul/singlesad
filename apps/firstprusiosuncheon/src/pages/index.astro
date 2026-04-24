@@ -744,7 +744,51 @@ const daewooLogo = `<svg viewBox="0 0 53 12" fill="none" xmlns="http://www.w3.or
     </div>
 
   </section>
-  <!-- section10: Footer CTA — to be added -->
+  <!-- section10: Contact band + PRUGIO closer (full-viewport-width, no max-w cap) -->
+  <section id="section10" class="w-full">
+
+    <!-- BAND 1: Brown contact band -->
+    <div class="w-full bg-[#8c7c6e] flex flex-col gap-[19px] items-center py-[40px] text-center tracking-[-0.4px]">
+      <!-- Label -->
+      <p class="w-full text-white text-[20px] leading-[16px] whitespace-pre-wrap" style="font-weight: 300;">ㅣ   대표전화   ㅣ</p>
+      <!-- Big phone number (clickable) -->
+      <a href="tel:1644-9644" class="block w-full">
+        <p class="h-[54px] flex items-center justify-center text-white text-[60px] leading-[16px]" style="font-weight: 700;">1644-9644</p>
+      </a>
+      <!-- Inset horizontal divider: 20px inset mobile / 60px md+, 50% white -->
+      <div class="self-stretch h-px bg-white/50 mx-[20px] md:mx-[60px] mt-[1px]" aria-hidden="true"></div>
+      <!-- Summary block -->
+      <div class="w-full flex flex-col items-center gap-[20px]">
+        <p class="w-full text-[#b3a091] text-[20px] whitespace-pre-wrap leading-[16px]" style="font-weight: 300;"><span class="text-white" style="font-weight: 700;">84㎡</span><span> A·B·C·D : 210세대  /  </span><span class="text-white" style="font-weight: 700;">111㎡</span><span> A·B·C : 350세대</span></p>
+        <p class="w-full text-white text-[20px] leading-[16px]" style="font-weight: 700;">총560세대</p>
+      </div>
+    </div>
+
+    <!-- BAND 2: Light gray PRUGIO closer + decorative pattern -->
+    <div class="w-full">
+      <!-- Content area -->
+      <div class="w-full bg-[#ebedeb] flex flex-col gap-[40px] items-center justify-center pt-[220px] pb-[160px] md:pt-[320px] md:pb-[200px] px-[20px] md:px-[80px]">
+        <!-- PRUGIO pack (logo + THE FIRST) -->
+        <div class="flex flex-col gap-[20px] items-center">
+          <span class="block w-full max-w-[350px] h-auto md:w-[360.265px] md:h-[57.03px] aspect-[360.265/57.03] [&>svg]:block [&>svg]:w-full [&>svg]:h-full" set:html={prusioLargeLogo} />
+          <p class="text-[#6a696a] text-[20px] text-center leading-[normal] tracking-[1.5px] whitespace-nowrap" style="font-weight: 700;">THE FIRST</p>
+        </div>
+        <!-- Closer project name -->
+        <p class="w-full text-[#084f51] text-[32px] text-center leading-[normal] tracking-[-0.4px]" style="font-weight: 800;">순천 푸르지오 더 퍼스트</p>
+      </div>
+      <!-- Decorative wave pattern (R2-hosted webp) -->
+      <img
+        src={`${ASSET_BASE}/firstprusiosuncheon/pattern_lightgreen.webp`}
+        alt=""
+        width="1440"
+        height="139"
+        loading="lazy"
+        class="block w-full h-auto bg-[#ebedeb]"
+        aria-hidden="true"
+      />
+    </div>
+
+  </section>
   <!-- section11: Footer legal — to be added -->
 </Base>
 
