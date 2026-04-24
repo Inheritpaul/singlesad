@@ -294,7 +294,290 @@ const daewooLogo = `<svg viewBox="0 0 53 12" fill="none" xmlns="http://www.w3.or
       </div>
     </div>
   </section>
-  <!-- section07: Overview — to be added -->
+  <!-- section07: OVERVIEW — teal header / hero / PRIDE6 / 개요 / 주변 환경 -->
+  <section id="section07" class="w-full bg-white md:px-[60px] xl:max-w-[1200px] 2xl:max-w-[1400px] xl:mx-auto py-[120px] flex flex-col gap-[60px] items-center">
+
+    <!-- BLOCK 1+2: Teal header band + hero image, edge-joined (no gap between) -->
+    <div class="w-full flex flex-col items-start">
+      <!-- Block 1: Teal OVERVIEW header -->
+      <div class="w-full bg-gradient-to-t from-[#005252] to-[#003e3e] flex flex-col md:flex-row md:items-start gap-[40px] md:gap-[80px] px-[20px] pt-[80px] pb-[100px] md:px-[80px] md:py-[100px]">
+        <p class="w-[160px] shrink-0 text-[#41847f] text-[20px] leading-[normal] tracking-[1.5px]" style="font-weight: 700;">OVERVIEW</p>
+        <div class="flex flex-1 min-w-0 items-center md:gap-[40px]">
+          <div class="hidden md:block self-stretch w-px bg-white/20" aria-hidden="true"></div>
+          <p class="flex-1 min-w-0 text-white text-[28px] md:text-[32px] leading-[normal] tracking-[-0.4px]" style="font-weight: 800;">지역 내 선호도가 높은 중대형 평형 위주 상품 구성</p>
+        </div>
+      </div>
+      <!-- Block 2: Hero building image -->
+      <img
+        src={`${ASSET_BASE}/firstprusiosuncheon/01_overview_prusio01.webp`}
+        alt="순천 푸르지오 더 퍼스트 조감도"
+        width="2048"
+        height="1628"
+        loading="lazy"
+        class="block w-full h-[551px] md:h-[814px] object-cover"
+      />
+    </div>
+
+    <!-- BLOCK 3: PRIDE6 -->
+    <div class="w-full flex flex-col gap-[40px] items-center py-[40px]">
+      <p class="w-full text-[#6a696a] text-[28px] md:text-[32px] text-center leading-[normal] tracking-[-0.4px]" style="font-weight: 800;"><span>순천 푸르지오 더 퍼스트만의 </span><span class="text-[#005252]">PRIDE6</span></p>
+      <div class="w-full grid grid-cols-2 md:grid-cols-3 gap-px bg-[#8c7c6e]/20">
+        <div class="bg-white flex flex-col gap-[32px] items-center px-[20px] py-[40px] md:px-0">
+          <!-- TODO: paste PRIDE icon 1 (location: center) SVG here -->
+          <div class="shrink-0 size-[60px] bg-[#e8e8e8] flex items-center justify-center text-[10px] text-gray-500" aria-hidden="true">icon 1</div>
+          <div class="w-full flex flex-col gap-[8px] text-[#434143] text-center tracking-[-0.4px]">
+            <p class="text-[20px] md:text-[24px] leading-[normal]" style="font-weight: 800;">순천의 중심에서 첫 푸르지오</p>
+            <p class="text-[16px] md:text-[20px] leading-[normal]" style="font-weight: 500;">첫번째 푸르지오가 순천의 중심에서 시작합니다.</p>
+          </div>
+        </div>
+        <div class="bg-white flex flex-col gap-[32px] items-center px-[20px] py-[40px] md:px-0">
+          <!-- TODO: paste PRIDE icon 2 (mart) SVG here -->
+          <div class="shrink-0 size-[60px] bg-[#e8e8e8] flex items-center justify-center text-[10px] text-gray-500" aria-hidden="true">icon 2</div>
+          <div class="w-full flex flex-col gap-[8px] text-[#434143] text-center tracking-[-0.4px]">
+            <p class="text-[20px] md:text-[24px] leading-[normal]" style="font-weight: 800;">집앞 마트권</p>
+            <p class="text-[16px] md:text-[20px] leading-[normal]" style="font-weight: 500;">이마트, 홈플러스, 메가박스를 걸어서 바로 누린다</p>
+          </div>
+        </div>
+        <div class="bg-white flex flex-col gap-[32px] items-center px-[20px] py-[40px] md:px-0">
+          <!-- TODO: paste PRIDE icon 3 (ktx/train) SVG here -->
+          <div class="shrink-0 size-[60px] bg-[#e8e8e8] flex items-center justify-center text-[10px] text-gray-500" aria-hidden="true">icon 3</div>
+          <div class="w-full flex flex-col gap-[8px] text-[#434143] text-center tracking-[-0.4px]">
+            <p class="text-[20px] md:text-[24px] leading-[normal]" style="font-weight: 800;">KTX 역세권</p>
+            <p class="text-[16px] md:text-[20px] leading-[normal]" style="font-weight: 500;">순천역, 종합터미널, 동순천IC등 순천 전역을 빠르게</p>
+          </div>
+        </div>
+        <div class="bg-white flex flex-col gap-[32px] items-center px-[20px] py-[40px] md:px-0">
+          <!-- TODO: paste PRIDE icon 4 (forest) SVG here -->
+          <div class="shrink-0 size-[60px] bg-[#e8e8e8] flex items-center justify-center text-[10px] text-gray-500" aria-hidden="true">icon 4</div>
+          <div class="w-full flex flex-col gap-[8px] text-[#434143] text-center tracking-[-0.4px]">
+            <p class="text-[20px] md:text-[24px] leading-[normal]" style="font-weight: 800;">쾌적한 숲세권</p>
+            <p class="text-[16px] md:text-[20px] leading-[normal]" style="font-weight: 500;">국가정원, 순천 동천변, 순천만까지 누리는 숲세권</p>
+          </div>
+        </div>
+        <div class="bg-white flex flex-col gap-[32px] items-center px-[20px] py-[40px] md:px-0">
+          <!-- TODO: paste PRIDE icon 5 (trust/shield) SVG here -->
+          <div class="shrink-0 size-[60px] bg-[#e8e8e8] flex items-center justify-center text-[10px] text-gray-500" aria-hidden="true">icon 5</div>
+          <div class="w-full flex flex-col gap-[8px] text-[#434143] text-center tracking-[-0.4px]">
+            <p class="text-[20px] md:text-[24px] leading-[normal]" style="font-weight: 800;">믿을 수 있는 선시공 후분양 사업</p>
+            <p class="text-[16px] md:text-[20px] leading-[normal]" style="font-weight: 500;">푸르지오의 안정성과 기술력을 직접 보고 선택</p>
+          </div>
+        </div>
+        <div class="bg-white flex flex-col gap-[32px] items-center px-[20px] py-[40px] md:px-0">
+          <!-- TODO: paste PRIDE icon 6 (space-innovation) SVG here -->
+          <div class="shrink-0 size-[60px] bg-[#e8e8e8] flex items-center justify-center text-[10px] text-gray-500" aria-hidden="true">icon 6</div>
+          <div class="w-full flex flex-col gap-[8px] text-[#434143] text-center tracking-[-0.4px]">
+            <p class="text-[20px] md:text-[24px] leading-[normal]" style="font-weight: 800;">푸르지오만의 공간 혁신</p>
+            <p class="text-[16px] md:text-[20px] leading-[normal]" style="font-weight: 500;">4Bay 맞통풍 구조(일부세대 제외) 세대별 창고 등 여유로운 수납공간 제공</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOCK 4: 개요 -->
+    <div class="w-full flex flex-col gap-[40px] items-start px-[20px] py-[40px] md:px-0">
+      <!-- Header -->
+      <div class="flex gap-[24px] items-start w-full">
+        <div class="flex flex-col w-[8px] self-stretch shrink-0" aria-hidden="true">
+          <div class="flex-1 w-full bg-[#005252]"></div>
+          <div class="flex-1 w-full bg-[#8c7c6e]"></div>
+        </div>
+        <p class="text-[#6a696a] text-[24px] leading-[normal] tracking-[-0.4px] whitespace-nowrap" style="font-weight: 800;">순천 푸르지오 더 퍼스트 개요</p>
+      </div>
+      <!-- Content: 2-col md+ / stacked mobile -->
+      <div class="w-full flex flex-col gap-[40px] md:flex-row md:gap-[20px] md:items-start">
+        <!-- Left col: image + spec table -->
+        <div class="flex-1 min-w-0 flex flex-col gap-[32px] items-start">
+          <img
+            src={`${ASSET_BASE}/firstprusiosuncheon/01_overview_prusio02.webp`}
+            alt="순천 푸르지오 더 퍼스트 조감도"
+            width="1140"
+            height="800"
+            loading="lazy"
+            class="block w-full h-auto aspect-[570/400] object-cover"
+          />
+          <div class="w-full flex flex-col border-t-2 border-b-2 border-[#8c7c6e]">
+            <div class="flex items-stretch w-full">
+              <div class="bg-[#ebedeb] border-[0.5px] border-[#323434] flex items-center justify-center py-[8px] w-[82px] md:w-[149px] shrink-0">
+                <p class="text-[#434143] text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px]" style="font-weight: 800;">위치</p>
+              </div>
+              <div class="flex-1 min-w-0 border-[0.5px] border-[#323434] flex items-center pl-[20px] py-[8px]">
+                <p class="text-[#434143] text-[14px] md:text-[16px] leading-[normal] tracking-[-0.4px]" style="font-weight: 500;">순천시 덕암동 142번지 일원</p>
+              </div>
+            </div>
+            <div class="flex items-stretch w-full">
+              <div class="bg-[#ebedeb] border-[0.5px] border-[#323434] flex items-center justify-center py-[8px] w-[82px] md:w-[149px] shrink-0">
+                <p class="text-[#434143] text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px]" style="font-weight: 800;">지역지구</p>
+              </div>
+              <div class="flex-1 min-w-0 border-[0.5px] border-[#323434] flex items-center pl-[20px] py-[8px]">
+                <p class="text-[#434143] text-[14px] md:text-[16px] leading-[normal] tracking-[-0.4px]" style="font-weight: 500;">일반상업지역, 시가지경관지구</p>
+              </div>
+            </div>
+            <div class="flex items-stretch w-full">
+              <div class="bg-[#ebedeb] border-[0.5px] border-[#323434] flex items-center justify-center py-[8px] w-[82px] md:w-[149px] shrink-0">
+                <p class="text-[#434143] text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px]" style="font-weight: 800;">대지면적</p>
+              </div>
+              <div class="flex-1 min-w-0 border-[0.5px] border-[#323434] flex items-center pl-[20px] py-[8px]">
+                <p class="text-[#434143] text-[14px] md:text-[16px] leading-[normal] tracking-[-0.4px]" style="font-weight: 500;">16,772.6000 ㎡</p>
+              </div>
+            </div>
+            <div class="flex items-stretch w-full">
+              <div class="bg-[#ebedeb] border-[0.5px] border-[#323434] flex items-center justify-center py-[8px] w-[82px] md:w-[149px] shrink-0">
+                <p class="text-[#434143] text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px]" style="font-weight: 800;">건축규모</p>
+              </div>
+              <div class="flex-1 min-w-0 border-[0.5px] border-[#323434] flex items-center pl-[20px] py-[8px]">
+                <p class="text-[#434143] text-[14px] md:text-[16px] leading-[normal] tracking-[-0.4px]" style="font-weight: 500;">지하3층 - 지상 29층 / 6개동 560세대</p>
+              </div>
+            </div>
+            <div class="flex items-stretch w-full">
+              <div class="bg-[#ebedeb] border-[0.5px] border-[#323434] flex items-center justify-center py-[8px] w-[82px] md:w-[149px] shrink-0">
+                <p class="text-[#434143] text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px]" style="font-weight: 800;">전용평형</p>
+              </div>
+              <div class="flex-1 min-w-0 border-[0.5px] border-[#323434] flex items-center pl-[20px] py-[8px]">
+                <p class="text-[#434143] text-[14px] md:text-[16px] leading-[normal] tracking-[-0.4px]" style="font-weight: 500;">아파트 : 560세대 (84Type : 210세대 / 111Type: 350세대)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Right col: image + headline + type table -->
+        <div class="flex-1 min-w-0 flex flex-col gap-[20px] md:gap-[32px] items-start">
+          <img
+            src={`${ASSET_BASE}/firstprusiosuncheon/01_overview_prusio03.webp`}
+            alt="순천 푸르지오 더 퍼스트 배치도"
+            width="1562"
+            height="1096"
+            loading="lazy"
+            class="block w-full h-auto aspect-[1562/1096] object-cover"
+          />
+          <div class="w-full flex flex-col gap-[20px] md:gap-[32px] items-start">
+            <div class="w-full flex flex-col gap-[8px] items-start text-[#6a696a] text-center tracking-[-0.4px]">
+              <p class="w-full text-[20px] md:text-[24px] leading-[normal]"><span style="font-weight: 800;">70% 이상의 판상형 </span><span style="font-weight: 500;">배치로</span></p>
+              <p class="w-full text-[16px] md:text-[24px] leading-[normal]" style="font-weight: 500;">풍부한 일조량과 맞통풍이 가능하여 환기가 뛰어남</p>
+            </div>
+            <div class="w-full flex flex-col border-t-2 border-b-2 border-[#8c7c6e]">
+              <div class="flex items-stretch w-full">
+                <div class="flex-1 min-w-0 bg-[#ebedeb] border-[0.5px] border-[#323434] flex items-center justify-center py-[12px]"><p class="text-[#434143] text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px] whitespace-nowrap" style="font-weight: 800;">타입</p></div>
+                <div class="flex-1 min-w-0 bg-[#00b342] border-[0.5px] border-[#323434] flex items-center justify-center py-[12px]"><p class="text-white text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px] whitespace-nowrap" style="font-weight: 800;">84A</p></div>
+                <div class="flex-1 min-w-0 bg-[#bee1b0] border-[0.5px] border-[#323434] flex items-center justify-center py-[12px]"><p class="text-white text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px] whitespace-nowrap" style="font-weight: 800;">84B</p></div>
+                <div class="flex-1 min-w-0 bg-[#448426] border-[0.5px] border-[#323434] flex items-center justify-center py-[12px]"><p class="text-white text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px] whitespace-nowrap" style="font-weight: 800;">84C</p></div>
+                <div class="flex-1 min-w-0 bg-[#2e581a] border-[0.5px] border-[#323434] flex items-center justify-center py-[12px]"><p class="text-white text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px] whitespace-nowrap" style="font-weight: 800;">84D</p></div>
+                <div class="flex-1 min-w-0 bg-[#88abe0] border-[0.5px] border-[#323434] flex items-center justify-center py-[12px]"><p class="text-white text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px] whitespace-nowrap" style="font-weight: 800;">111A</p></div>
+                <div class="flex-1 min-w-0 bg-[#3373ca] border-[0.5px] border-[#323434] flex items-center justify-center py-[12px]"><p class="text-white text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px] whitespace-nowrap" style="font-weight: 800;">111B</p></div>
+                <div class="flex-1 min-w-0 bg-[#024f7d] border-[0.5px] border-[#323434] flex items-center justify-center py-[12px]"><p class="text-white text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px] whitespace-nowrap" style="font-weight: 800;">111C</p></div>
+              </div>
+              <div class="flex items-stretch w-full">
+                <div class="flex-1 min-w-0 border-[0.5px] border-[#323434] flex items-center justify-center py-[12px]"><p class="text-[#434143] text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px] whitespace-nowrap" style="font-weight: 800;">세대수</p></div>
+                <div class="flex-1 min-w-0 border-[0.5px] border-[#323434] flex items-center justify-center py-[12px]"><p class="text-[#434143] text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px] whitespace-nowrap" style="font-weight: 500;">128</p></div>
+                <div class="flex-1 min-w-0 border-[0.5px] border-[#323434] flex items-center justify-center py-[12px]"><p class="text-[#434143] text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px] whitespace-nowrap" style="font-weight: 500;">26</p></div>
+                <div class="flex-1 min-w-0 border-[0.5px] border-[#323434] flex items-center justify-center py-[12px]"><p class="text-[#434143] text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px] whitespace-nowrap" style="font-weight: 500;">28</p></div>
+                <div class="flex-1 min-w-0 border-[0.5px] border-[#323434] flex items-center justify-center py-[12px]"><p class="text-[#434143] text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px] whitespace-nowrap" style="font-weight: 500;">28</p></div>
+                <div class="flex-1 min-w-0 border-[0.5px] border-[#323434] flex items-center justify-center py-[12px]"><p class="text-[#434143] text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px] whitespace-nowrap" style="font-weight: 500;">234</p></div>
+                <div class="flex-1 min-w-0 border-[0.5px] border-[#323434] flex items-center justify-center py-[12px]"><p class="text-[#434143] text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px] whitespace-nowrap" style="font-weight: 500;">96</p></div>
+                <div class="flex-1 min-w-0 border-[0.5px] border-[#323434] flex items-center justify-center py-[12px]"><p class="text-[#434143] text-[14px] md:text-[16px] text-center leading-[normal] tracking-[-0.4px] whitespace-nowrap" style="font-weight: 500;">20</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOCK 5: 주변 환경 -->
+    <div class="w-full flex flex-col gap-[40px] items-start px-[20px] py-[40px] md:px-0">
+      <!-- Header -->
+      <div class="flex gap-[24px] items-start w-full">
+        <div class="flex flex-col w-[8px] self-stretch shrink-0" aria-hidden="true">
+          <div class="flex-1 w-full bg-[#005252]"></div>
+          <div class="flex-1 w-full bg-[#8c7c6e]"></div>
+        </div>
+        <p class="text-[#6a696a] text-[24px] leading-[normal] tracking-[-0.4px] whitespace-nowrap" style="font-weight: 800;">순천 푸르지오 주변 환경</p>
+      </div>
+      <!-- Content: desktop 2-col (rows left, map right); mobile stacked (map first, rows below) -->
+      <div class="w-full flex flex-col md:flex-row-reverse md:gap-[40px] md:items-start md:justify-center">
+        <!-- Shared map -->
+        <img
+          src={`${ASSET_BASE}/firstprusiosuncheon/01_overview_prusio09.webp`}
+          alt="순천 푸르지오 더 퍼스트 주변 환경 지도"
+          width="1456"
+          height="1090"
+          loading="lazy"
+          class="block w-full md:flex-1 h-auto aspect-[1456/1090] object-cover mb-[40px] md:mb-0"
+        />
+        <!-- 5-row list -->
+        <div class="w-full md:w-auto md:shrink-0 flex flex-col gap-[20px] md:gap-[14px] items-start">
+          <!-- Row: INFRA -->
+          <div class="w-full flex gap-[20px] items-start md:items-center">
+            <img src={`${ASSET_BASE}/firstprusiosuncheon/01_overview_prusio04.webp`} alt="" width="286" height="200" loading="lazy" class="shrink-0 h-[84px] w-[120px] md:h-[100px] md:w-[143px] object-cover" aria-hidden="true" />
+            <div class="flex-1 min-w-0 flex flex-col gap-[8px] items-start">
+              <div class="w-full flex gap-[8px] items-center">
+                <span class="shrink-0 text-[#6a696a] text-[14px] md:text-[20px] opacity-30 leading-[normal] tracking-[-0.4px] whitespace-nowrap" style="font-weight: 800;">INFRA</span>
+                <div class="flex-1 min-w-0 h-px bg-[#6a696a]/30" aria-hidden="true"></div>
+              </div>
+              <div class="w-full flex flex-col gap-[4px] h-[55px] items-start tracking-[-0.4px]">
+                <p class="w-full text-[#015151] text-[16px] md:text-[20px] leading-[normal]" style="font-weight: 800;">걸어서 누리는 생활인프라</p>
+                <p class="w-full text-[#6a696a] text-[14px] leading-[normal]" style="font-weight: 500;">집앞을 나서면 이마트, 메가박스, 홈플러스를 바로 편리하게</p>
+              </div>
+            </div>
+          </div>
+          <!-- Row: TRAFFIC -->
+          <div class="w-full flex gap-[20px] items-start md:items-center">
+            <img src={`${ASSET_BASE}/firstprusiosuncheon/01_overview_prusio05.webp`} alt="" width="286" height="200" loading="lazy" class="shrink-0 h-[84px] w-[120px] md:h-[100px] md:w-[143px] object-cover" aria-hidden="true" />
+            <div class="flex-1 min-w-0 flex flex-col gap-[8px] items-start">
+              <div class="w-full flex gap-[8px] items-center">
+                <span class="shrink-0 text-[#6a696a] text-[14px] md:text-[20px] opacity-30 leading-[normal] tracking-[-0.4px] whitespace-nowrap" style="font-weight: 800;">TRAFFIC</span>
+                <div class="flex-1 min-w-0 h-px bg-[#6a696a]/30" aria-hidden="true"></div>
+              </div>
+              <div class="w-full flex flex-col gap-[4px] h-[55px] items-start tracking-[-0.4px]">
+                <p class="w-full text-[#015151] text-[16px] md:text-[20px] leading-[normal]" style="font-weight: 800;">사통팔달의 쾌속 광역교통망</p>
+                <p class="w-full text-[#6a696a] text-[14px] leading-[normal]" style="font-weight: 500;">순천역, 버스터미널, 통순천IC 등 우수한 교통환경으로 빠르게</p>
+              </div>
+            </div>
+          </div>
+          <!-- Row: PLAN -->
+          <div class="w-full flex gap-[20px] items-start md:items-center">
+            <img src={`${ASSET_BASE}/firstprusiosuncheon/01_overview_prusio06.webp`} alt="" width="286" height="200" loading="lazy" class="shrink-0 h-[84px] w-[120px] md:h-[100px] md:w-[143px] object-cover" aria-hidden="true" />
+            <div class="flex-1 min-w-0 flex flex-col gap-[8px] items-start">
+              <div class="w-full flex gap-[8px] items-center">
+                <span class="shrink-0 text-[#6a696a] text-[14px] md:text-[20px] opacity-30 leading-[normal] tracking-[-0.4px] whitespace-nowrap" style="font-weight: 800;">PLAN</span>
+                <div class="flex-1 min-w-0 h-px bg-[#6a696a]/30" aria-hidden="true"></div>
+              </div>
+              <div class="w-full flex flex-col gap-[4px] h-[55px] items-start tracking-[-0.4px]">
+                <p class="w-full text-[#015151] text-[16px] md:text-[20px] leading-[normal]" style="font-weight: 800;">남쪽으로 시작되는 개발의 출발점</p>
+                <p class="w-full text-[#6a696a] text-[14px] leading-[normal]" style="font-weight: 500;">순천역 뉴딜계획으로부터 풍덕지구 개발 시작까지</p>
+              </div>
+            </div>
+          </div>
+          <!-- Row: GREEN -->
+          <div class="w-full flex gap-[20px] items-start md:items-center">
+            <img src={`${ASSET_BASE}/firstprusiosuncheon/01_overview_prusio07.webp`} alt="" width="286" height="200" loading="lazy" class="shrink-0 h-[84px] w-[120px] md:h-[100px] md:w-[143px] object-cover" aria-hidden="true" />
+            <div class="flex-1 min-w-0 flex flex-col gap-[8px] items-start">
+              <div class="w-full flex gap-[8px] items-center">
+                <span class="shrink-0 text-[#6a696a] text-[14px] md:text-[20px] opacity-30 leading-[normal] tracking-[-0.4px] whitespace-nowrap" style="font-weight: 800;">GREEN</span>
+                <div class="flex-1 min-w-0 h-px bg-[#6a696a]/30" aria-hidden="true"></div>
+              </div>
+              <div class="w-full flex flex-col gap-[4px] h-[55px] items-start tracking-[-0.4px]">
+                <p class="w-full text-[#015151] text-[16px] md:text-[20px] leading-[normal]" style="font-weight: 800;">걸어서 느끼는 녹색환경</p>
+                <p class="w-full text-[#6a696a] text-[14px] leading-[normal]" style="font-weight: 500;">순천동청변, 순천만 국가정원, 순천 호수공원 등을 상쾌하게</p>
+              </div>
+            </div>
+          </div>
+          <!-- Row: EDU -->
+          <div class="w-full flex gap-[20px] items-start md:items-center">
+            <img src={`${ASSET_BASE}/firstprusiosuncheon/01_overview_prusio08.webp`} alt="" width="286" height="200" loading="lazy" class="shrink-0 h-[84px] w-[120px] md:h-[100px] md:w-[143px] object-cover" aria-hidden="true" />
+            <div class="flex-1 min-w-0 flex flex-col gap-[8px] items-start">
+              <div class="w-full flex gap-[8px] items-center">
+                <span class="shrink-0 text-[#6a696a] text-[14px] md:text-[20px] opacity-30 leading-[normal] tracking-[-0.4px] whitespace-nowrap" style="font-weight: 800;">EDU</span>
+                <div class="flex-1 min-w-0 h-px bg-[#6a696a]/30" aria-hidden="true"></div>
+              </div>
+              <div class="w-full flex flex-col gap-[4px] h-[55px] items-start tracking-[-0.4px]">
+                <p class="w-full text-[#015151] text-[16px] md:text-[20px] leading-[normal]" style="font-weight: 800;">풍부한 교육환경</p>
+                <p class="w-full text-[#6a696a] text-[14px] leading-[normal]" style="font-weight: 500;">순천중앙초, 풍덕초중, 이수중, 이수초 등으로 더 우수하게</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
   <!-- section08: Type — to be added -->
   <!-- section09: Utility & Infra — to be added -->
   <!-- section10: Footer CTA — to be added -->
