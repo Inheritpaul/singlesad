@@ -1,0 +1,38 @@
+---
+import 'pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css';
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>순천 푸르지오 더 퍼스트 | 첫 푸르지오, 순천의 중심이 되다</title>
+    <meta
+      name="description"
+      content="순천시 덕암동 142번지 일원, 지하 3층 ~ 지상 29층 / 6개동 560세대. 순천 푸르지오 더 퍼스트 분양 정보 및 청약 문의."
+    />
+  </head>
+  <body>
+    <div class="pt-[100px] md:pt-[60px]">
+      <slot />
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 160px;
+  }
+  @media (min-width: 768px) {
+    html { scroll-padding-top: 120px; }
+  }
+  body {
+    font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    font-weight: 400;
+    color: #434143;
+    background: #ffffff;
+  }
+</style>
