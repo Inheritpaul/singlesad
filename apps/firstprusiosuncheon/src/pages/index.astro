@@ -99,11 +99,8 @@ const daewooLogo = `<svg viewBox="0 0 53 12" fill="none" xmlns="http://www.w3.or
 
     <!-- BAND 2: light gray brand panel (daewoo row + centered PRUGIO pack) -->
     <div class="bg-[#ebedeb] flex flex-col gap-[40px] items-center justify-center pt-[40px] pb-[80px] px-[60px]">
-      <!-- Daewoo row: left visible logo + invisible md: spacer for justify-between symmetry -->
-      <div class="flex items-start justify-between w-full">
-        <span class="block w-[110px] h-[26px] [&>svg]:block [&>svg]:w-full [&>svg]:h-full" set:html={daewooLogo} />
-        <div class="hidden md:block w-[110px] h-[26px]" aria-hidden="true"></div>
-      </div>
+      <!-- Daewoo logo (centered) -->
+      <span class="block w-[110px] h-[26px] [&>svg]:block [&>svg]:w-full [&>svg]:h-full" set:html={daewooLogo} />
       <!-- PRUGIO pack (centered) -->
       <div class="flex flex-col gap-[20px] items-center">
         <span class="block w-[238px] h-[37.676px] md:w-[360.265px] md:h-[57.03px] [&>svg]:block [&>svg]:w-full [&>svg]:h-full" set:html={prusioLargeLogo} />
