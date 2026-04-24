@@ -124,7 +124,54 @@ const daewooLogo = `<svg viewBox="0 0 53 12" fill="none" xmlns="http://www.w3.or
       />
     </div>
   </section>
-  <!-- section03: Benefits — to be added -->
+  <!-- section03: Benefits (brown gradient band with laurel-flanked headline + 2 cards) -->
+  <section class="w-full overflow-hidden bg-[linear-gradient(to_bottom,#635446_0%,#7b6b5d_25%,#8c7c6e_62.019%)] pt-[120px] pb-[80px]">
+    <div class="max-w-[1200px] 2xl:max-w-[1400px] mx-auto flex flex-col items-center gap-[80px]">
+      <!-- Headline block (laurel L | text | laurel R) -->
+      <div class="flex gap-[12px] items-center justify-center px-[60px] w-full">
+        <!-- TODO: paste left laurel-wreath SVG here -->
+        <div class="shrink-0 w-[32.198px] h-[80px] md:w-[63.591px] md:h-[158px] bg-white/20 flex items-center justify-center text-white text-[10px]" aria-hidden="true">laurel L</div>
+
+        <!-- Text block: sub-headline + main headline -->
+        <div class="shrink-0 flex flex-col gap-[20px] text-center text-white tracking-[-0.4px]">
+          <p class="text-[16px] md:text-[32px] leading-[normal]" style="font-weight: 600;"><span style="font-weight: 400;">순천 푸르지오 더 퍼스트의 </span><span style="font-weight: 800;">주인이 될 기회</span></p>
+          <!-- Main headline: mobile 2-line / desktop 1-line -->
+          <div class="md:hidden text-[32px] leading-[normal]" style="font-weight: 800;">
+            <p>다시 찾아오지 않을</p>
+            <p>엄청난 혜택 2가지</p>
+          </div>
+          <p class="hidden md:block text-[60px] leading-[normal]" style="font-weight: 800;">다시 찾아오지 않을 엄청난 혜택 2가지</p>
+        </div>
+
+        <!-- TODO: paste right laurel-wreath SVG here (mirror via transform: scaleX(-1)) -->
+        <div class="shrink-0 w-[32.198px] h-[80px] md:w-[63.591px] md:h-[158px] bg-white/20 flex items-center justify-center text-white text-[10px]" style="transform: scaleX(-1);" aria-hidden="true">laurel R</div>
+      </div>
+
+      <!-- Divider. TODO: Figma ships a decorative line image; using semi-transparent white approximation until the real asset arrives. -->
+      <div class="w-[292px] md:w-[770px] h-px bg-white/40" aria-hidden="true"></div>
+
+      <!-- Cards row: stacked mobile (gap 40), side-by-side md+ (items-stretch + card1 justify-end so text bottoms align) -->
+      <div class="flex flex-col md:flex-row gap-[40px] md:gap-0 md:items-stretch md:justify-between px-[20px] md:px-[80px] w-full">
+        <!-- Card 1: "1.5억" + benefit text -->
+        <div class="flex flex-col items-center gap-[32px] py-[40px] md:flex-1 md:min-w-0 md:justify-end">
+          <p class="w-[228px] h-[99px] flex items-center justify-center text-white text-[88px] leading-none tracking-[-0.4px]" style="font-weight: 800;">1.5억</p>
+          <div class="w-full text-[#434143] text-[40px] text-center tracking-[-0.4px] leading-[normal]" style="font-weight: 800;">
+            <p>아파트 분양 지원 혜택</p>
+            <p>최대 1.5억 원</p>
+          </div>
+        </div>
+        <!-- Card 2: icon + benefit text -->
+        <div class="flex flex-col items-center gap-[32px] py-[40px] md:flex-1 md:min-w-0">
+          <!-- TODO: paste box/hand gift-icon SVG here -->
+          <div class="w-[120px] h-[120px] bg-white/20 flex items-center justify-center text-white text-[10px]" aria-hidden="true">icon</div>
+          <div class="w-full text-[#434143] text-[40px] text-center tracking-[-0.4px] leading-[normal]" style="font-weight: 800;">
+            <p>입주 축하금</p>
+            <p>역대급 최대 지원</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- section04: Contact block — to be added -->
   <!-- section05: Sticky menu — to be added -->
   <!-- section06: The Brand — to be added -->
