@@ -596,7 +596,147 @@ const daewooLogo = `<svg viewBox="0 0 53 12" fill="none" xmlns="http://www.w3.or
 
   </section>
   <!-- section08: Type — to be added -->
-  <!-- section09: Utility & Infra — to be added -->
+  <!-- section09: UTILITY & INFRA — brown header + 3 utility images + 3 design cards -->
+  <section id="section09" class="w-full bg-white md:px-[60px] xl:max-w-[1200px] 2xl:max-w-[1400px] xl:mx-auto py-[120px] flex flex-col gap-[60px] items-center">
+
+    <!-- BLOCK 1: Brown header band + hero utility image 01 -->
+    <div class="w-full flex flex-col items-start gap-[4px] md:gap-[8px]">
+      <!-- Brown gradient band -->
+      <div class="w-full bg-gradient-to-t from-[#8c7c6e] to-[#7c6c5e] flex flex-col md:flex-row md:items-start gap-[40px] md:gap-[80px] px-[20px] pt-[80px] pb-[100px] md:px-[80px] md:py-[100px]">
+        <p class="w-full md:w-[160px] md:shrink-0 text-[#9e8c7d] text-[20px] leading-[normal] tracking-[1.5px]" style="font-weight: 700;">UTILITY &amp; INFRA</p>
+        <div class="flex flex-1 min-w-0 items-center md:gap-[40px]">
+          <div class="hidden md:block self-stretch w-px bg-white/20" aria-hidden="true"></div>
+          <div class="flex-1 min-w-0 flex flex-col gap-[12px] items-start text-white tracking-[-0.4px]">
+            <!-- Sub-text: md+ single line / base 2 lines -->
+            <p class="hidden md:block w-full text-[20px] leading-[normal]" style="font-weight: 300;">생활의 품격을 높이는 푸르지오 더 퍼스트의 시설</p>
+            <div class="md:hidden w-full text-[20px] leading-[normal] whitespace-pre-wrap" style="font-weight: 300;">
+              <p>생활의 품격을 높이는 </p>
+              <p>푸르지오 더 퍼스트의 시설</p>
+            </div>
+            <p class="w-full text-[32px] leading-[normal]" style="font-weight: 800;">입주민들을 위한 특별한 생활이 시작됩니다</p>
+          </div>
+        </div>
+      </div>
+      <!-- Full-width utility photo 01 -->
+      <img
+        src={`${ASSET_BASE}/firstprusiosuncheon/03_utility_01.webp`}
+        alt="푸르지오 더 퍼스트 단지 조감"
+        width="2164"
+        height="1540"
+        loading="lazy"
+        class="block w-full h-auto aspect-[2164/1540] object-cover"
+      />
+    </div>
+
+    <!-- BLOCK 2: "한 차원 높은 자부심이 시작됩니다." headline + 3 design-quality cards -->
+    <div class="w-full flex flex-col gap-[40px] items-center px-[20px] py-[40px] md:px-0">
+      <p class="w-full text-[#6a696a] text-[32px] text-center leading-[normal] tracking-[-0.4px]" style="font-weight: 800;"><span>한 차원 높은 </span><span class="text-[#005252]">자부심</span><span>이 시작됩니다.</span></p>
+      <!-- 3 cards — md+ 3-col row / base flex-col -->
+      <div class="w-full flex flex-col md:flex-row md:items-start md:justify-center">
+        <!-- Card 1 — high-quality design (icon 60) -->
+        <div class="flex-1 min-w-0 flex flex-col gap-[20px] md:gap-[32px] items-center py-[40px]">
+          <!-- TODO: paste UTILITY icon 1 (high-quality design) SVG here — Paul will supply -->
+          <div class="shrink-0 size-[60px] bg-[#e8e8e8] flex items-center justify-center text-[10px] text-gray-500" aria-hidden="true">icon 1</div>
+          <div class="w-full flex flex-col gap-[8px] text-[#434143] text-center tracking-[-0.4px]">
+            <div class="w-full text-[24px] leading-[normal]" style="font-weight: 800;">
+              <p>중심의 자부심을 더하는</p>
+              <p>고품격 특화설계</p>
+            </div>
+            <div class="w-full text-[14px]" style="font-weight: 500;">
+              <p class="leading-[24px]">순천의 주거가치를 높이는 560세대 프리미엄 단지</p>
+              <p class="leading-[24px]">푸르지오만의 감각적이고 트렌디한 스타일의 입면 디자인</p>
+              <p class="leading-[24px]">역동적인 스카이 라인, 모던한 측벽의 차별화된 디자인</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 — eco-friendly (icon 60) -->
+        <div class="flex-1 min-w-0 flex flex-col gap-[20px] md:gap-[32px] items-center py-[40px]">
+          <!-- TODO: paste UTILITY icon 2 (eco-friendly) SVG here — Paul will supply -->
+          <div class="shrink-0 size-[60px] bg-[#e8e8e8] flex items-center justify-center text-[10px] text-gray-500" aria-hidden="true">icon 2</div>
+          <div class="w-full flex flex-col gap-[8px] text-[#434143] text-center tracking-[-0.4px]">
+            <div class="w-full text-[24px] leading-[normal]" style="font-weight: 800;">
+              <p>보다 쾌적한 삶을 위한</p>
+              <p>친환경 단지 설계</p>
+            </div>
+            <div class="w-full text-[14px]" style="font-weight: 500;">
+              <p class="leading-[24px]">4BAY설계로(일부), 통풍을 극대화 한 남향위주의 단지배치</p>
+              <p class="leading-[24px]">필로티 설계로 개방감 확보 및 세대 프라이버시보호(일부 동)</p>
+              <p class="leading-[24px]">녹색건축예비인증(우량), 에너지효율(1+등급)예비인증을</p>
+              <p class="leading-[24px]">받은 친환경 주거단지</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 — safety (icon 80 — larger) -->
+        <div class="flex-1 min-w-0 flex flex-col gap-[20px] md:gap-[32px] items-center py-[40px] md:py-[20px]">
+          <!-- TODO: paste UTILITY icon 3 (safety/parking, 80×80) SVG here — Paul will supply -->
+          <div class="shrink-0 size-[80px] bg-[#e8e8e8] flex items-center justify-center text-[10px] text-gray-500" aria-hidden="true">icon 3</div>
+          <div class="w-full flex flex-col gap-[8px] text-[#434143] text-center tracking-[-0.4px]">
+            <div class="w-full text-[24px] leading-[normal]" style="font-weight: 800;">
+              <p>안전한 이동을 반영한</p>
+              <p>공간 설계</p>
+            </div>
+            <div class="w-full text-[14px]" style="font-weight: 500;">
+              <p class="leading-[24px]">전체 지하주차장 설계 및 바로 세대로 진입할 수 있는</p>
+              <p class="leading-[24px]">편리한 주차시스템</p>
+              <p class="leading-[24px]">보행자의 안전과 쾌적성을 고려한 보행자 전용도로 설치</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOCK 3: Accent-bar header + utility image 02 -->
+    <div class="w-full flex flex-col gap-[40px] items-start py-[20px] md:py-[40px]">
+      <div class="flex gap-[24px] items-start w-full px-[20px] md:px-0">
+        <div class="flex flex-col w-[8px] self-stretch shrink-0" aria-hidden="true">
+          <div class="flex-1 w-full bg-[#005252]"></div>
+          <div class="flex-1 w-full bg-[#8c7c6e]"></div>
+        </div>
+        <!-- md+ two-line / base single flowing line -->
+        <div class="flex-1 min-w-0 text-[#6a696a] text-[24px] leading-[normal] tracking-[-0.4px]" style="font-weight: 800;">
+          <p class="md:hidden">단지 안에서 누리는 다양한 조경공간과 휴게 편의 시설로 입주민들의 편의와 주거만족을 실현</p>
+          <div class="hidden md:block whitespace-nowrap">
+            <p>단지 안에서 누리는 다양한 조경공간과 휴게 편의 시설로</p>
+            <p>입주민들의 편의와 주거만족을 실현</p>
+          </div>
+        </div>
+      </div>
+      <img
+        src={`${ASSET_BASE}/firstprusiosuncheon/03_utility_02.webp`}
+        alt="단지 조경 및 편의시설"
+        width="2838"
+        height="1284"
+        loading="lazy"
+        class="block w-full h-auto aspect-[2838/1284] object-cover"
+      />
+    </div>
+
+    <!-- BLOCK 4: Accent-bar header + utility image 03 -->
+    <div class="w-full flex flex-col gap-[40px] items-start py-[20px] md:py-[40px]">
+      <div class="flex gap-[24px] items-start w-full px-[20px] md:px-0">
+        <div class="flex flex-col w-[8px] self-stretch shrink-0" aria-hidden="true">
+          <div class="flex-1 w-full bg-[#005252]"></div>
+          <div class="flex-1 w-full bg-[#8c7c6e]"></div>
+        </div>
+        <div class="flex-1 min-w-0 text-[#6a696a] text-[24px] leading-[normal] tracking-[-0.4px]" style="font-weight: 800;">
+          <p class="md:hidden">단지 안에서 누리는 다양한 조경공간과 휴게 편의 시설로 입주민들의 편의와 주거만족을 실현</p>
+          <div class="hidden md:block whitespace-nowrap">
+            <p>단지 안에서 누리는 다양한 조경공간과 휴게 편의 시설로</p>
+            <p>입주민들의 편의와 주거만족을 실현</p>
+          </div>
+        </div>
+      </div>
+      <img
+        src={`${ASSET_BASE}/firstprusiosuncheon/03_utility_03.webp`}
+        alt="단지 내 커뮤니티 시설"
+        width="2840"
+        height="1132"
+        loading="lazy"
+        class="block w-full h-auto aspect-[2840/1132] object-cover"
+      />
+    </div>
+
+  </section>
   <!-- section10: Footer CTA — to be added -->
   <!-- section11: Footer legal — to be added -->
 </Base>
