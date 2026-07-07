@@ -27,30 +27,33 @@
   /* ── Type scale ─────────────────────────────────────────────────
    * One fluid hierarchy for the whole page. Sizes interpolate from
    * the 375px design to the 1280px design and then lock.
-   *   display  hero price line        40px → 84px
-   *   h1       section titles         22px → 40px
-   *   h2       sub-titles             18px → 26px
-   *   eyebrow  section kickers        15px → 22px
-   *   lead     hero subtitle          15px → 21px
-   *   body     paragraphs             15px → 18px
-   *   caption  pills, notes           12px → 14px
-   *   legal    footer                 12px
+   * (Boosted ~135% from the first cut — captions/legal ~125% —
+   * per client feedback that the original sizing read too small.)
+   *   display  hero price line        54px → 104px (capped so the
+   *            price stays on one line in the 1120px container)
+   *   h1       section titles         30px → 54px
+   *   h2       sub-titles             24px → 35px
+   *   eyebrow  section kickers        20px → 30px
+   *   lead     hero subtitle          20px → 28px
+   *   body     paragraphs             20px → 24px
+   *   caption  pills, notes           15px → 18px
+   *   legal    footer                 15px
    */
-  --text-display: clamp(2.5rem, 1.1rem + 6vw, 5.25rem);
+  --text-display: clamp(3.375rem, 1.5rem + 8vw, 6.5rem);
   --text-display--line-height: 1.12;
-  --text-h1: clamp(1.375rem, 0.95rem + 1.9vw, 2.5rem);
+  --text-h1: clamp(1.875rem, 1.3rem + 2.5vw, 3.375rem);
   --text-h1--line-height: 1.3;
-  --text-h2: clamp(1.125rem, 0.95rem + 0.8vw, 1.625rem);
+  --text-h2: clamp(1.5rem, 1.28rem + 1.1vw, 2.1875rem);
   --text-h2--line-height: 1.4;
-  --text-eyebrow: clamp(0.9375rem, 0.8rem + 0.7vw, 1.375rem);
+  --text-eyebrow: clamp(1.25rem, 1.08rem + 0.95vw, 1.875rem);
   --text-eyebrow--line-height: 1.3;
-  --text-lead: clamp(0.9375rem, 0.82rem + 0.55vw, 1.3125rem);
+  --text-lead: clamp(1.25rem, 1.1rem + 0.75vw, 1.75rem);
   --text-lead--line-height: 1.5;
-  --text-body: clamp(0.9375rem, 0.9rem + 0.25vw, 1.125rem);
+  --text-body: clamp(1.25rem, 1.2rem + 0.35vw, 1.5rem);
   --text-body--line-height: 1.7;
-  --text-caption: clamp(0.75rem, 0.71rem + 0.2vw, 0.875rem);
+  --text-caption: clamp(0.9375rem, 0.89rem + 0.27vw, 1.125rem);
   --text-caption--line-height: 1.55;
-  --text-legal: 0.75rem;
+  --text-legal: 0.9375rem;
   --text-legal--line-height: 1.8;
 }
 
