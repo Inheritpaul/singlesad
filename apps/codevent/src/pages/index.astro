@@ -1,0 +1,463 @@
+---
+// codevent — 마닐라 COD 대박 프로모션
+// Hand-built rebuild of the codevent.co.kr landing page. All copy is real,
+// selectable HTML text (the original shipped every string as flattened SVG);
+// the type hierarchy lives in src/styles/global.css (@theme --text-* tokens).
+// Raster imagery loads from R2 (codevent/ prefix); the only local SVGs are
+// the six step-progress rings and the red discount arrow.
+import "pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css";
+import "../styles/global.css";
+
+const ASSET_BASE = import.meta.env.PUBLIC_ASSETS_BASE_URL;
+const img = (name: string) => `${ASSET_BASE}/codevent/${name}.webp`;
+
+const title = "마닐라 COD 대박 프로모션";
+const siteUrl = "https://www.codevent.co.kr/";
+
+const KAKAO_QR = "https://qr.kakao.com/talk/qdHvdBS9RxXfVO7VbZQK.a.fDwg-";
+const KAKAO_OPEN = "https://open.kakao.com/o/s3SKR3fi";
+
+// 프로모션 참여 방법 — six steps (bold spans preserved from the original)
+const steps = [
+  {
+    icon: "step-01",
+    html: `카카오톡 아이디 <strong>codevent</strong> 를 친구추가하여 일정 확인을 받는다. (상담시간 오전10시 ~ 오후 6시 / 긴급 24시간)`,
+  },
+  {
+    icon: "step-02",
+    html: `방문날자와, 비행기 스케쥴을 공유 하여, 해당일자에 호텔방이 가능한지 확인을 먼저 합니다.`,
+  },
+  {
+    icon: "step-03",
+    html: `방문날자에 확인이 되시면, 최종픽스를 하시고, 홈페이지 에서 결제를 진행하시면 됩니다.`,
+  },
+  {
+    icon: "step-04",
+    html: `해당날자에 방문을 하시면, 편도픽업차량이 대기 하여 있습니다. Cod 직원와 미팅을 하시면 됩니다.`,
+  },
+  {
+    icon: "step-05",
+    html: `해당날자에 방문을 하시고, 호텔 로비에 짐을 맡기시고, 카지노 안에 있는 메인데스크 에서 “멜코클럽 맴버쉽 카드” 를 발급을 받으시면 됩니다. (여권필요)`,
+  },
+  {
+    icon: "step-06",
+    html: `<strong>‘멜코클럽 멤버쉽 카드’ 를 발급</strong>을 받으시고, 호텔 로비에서 체크인 진행하시면 됩니다.`,
+  },
+];
+
+// COD의 즐길거리들 — four cards
+const funCards = [
+  {
+    pill: "드림플레이",
+    image: "07_fun_dreamplay",
+    caption: "아이들이 맘놓고 놀수 있는 모험의 어드벤쳐",
+  },
+  {
+    pill: "럭셔리 풀장",
+    image: "07_fun_pool",
+    caption: "누와호텔 , 노부호텔, 하얏트호텔 각각 수영장을 갖추고 있어서, 여유롭게 즐길수 있습니다.",
+  },
+  {
+    pill: "다양한 레스토랑",
+    image: "07_fun_restaurant",
+    caption:
+      "다양한 레스토랑이 입점하여 있어서, 현지식, 한식, 양식, 일식, 그리고 한국편의점까지 즐길실수 있습니다.",
+  },
+  {
+    pill: "쇼핑거리",
+    image: "07_fun_shopping",
+    caption: "다양한 샵이 입점을 하여, 쇼핑을 즐길실수 있으십니다.",
+  },
+];
+
+// Q&A — five items (bold lead spans preserved from the original)
+const qna = [
+  {
+    q: "가격이 너무 저렴한데 사기 아닌가요?",
+    a: `<strong>마닐라 시티오브드림이 공식 파트너로 진행</strong>하는 프로모션으로 안심하셔도 됩니다.<br />당사에서 고객유치를 위해 직접 진행하는 프로모션으로, 일정기간 이후 해등 프로모션은 종료될 수도 있습니다.`,
+  },
+  {
+    q: "해당 상품을 언제나 동일한 가격에 이용할 수 있는건가요?",
+    a: `멜코클럽 미가입자 혹은 6개월 이상 해당 멤버십을 사용하지 않으신 가입자 분들의 경우, 해당 프로모션의 이용이 가능하십니다.<br /><br />이에 해당되지 않는 분들의 경우에는 멜코카드에 포인트를 적립 받으셔 혜택을 누리실 수 있습니다. 누적포인트가 일정 수준 이상이 되면, 누아호텔 혹은 노부 호텔을 무료로 이용하실 수도 있습니다. 보다 자세한 질문은 카카오톡 채널을 통해 문의해주시기 바랍니다.`,
+  },
+  {
+    q: "멜코크럽 포인트는 어떻게 쌓나요?",
+    a: `마닐라 시티오브드림(COD) 안에 있는 카지노를 이용하시면 포인트를 쌓으실 수 있습니다.<br />단, 정켓게임을 통한 포인트 적립은 불가하오니, 카지노 이용 전 참고해주시기 바랍니다.`,
+  },
+  {
+    q: "돈을 많이 써야만 포인트가 적립되나요?",
+    a: `그렇지 않습니다.<br />포인트 적립은 이용 금액보다 게임 플레이 시간의 영향을 많이 받습니다.<br />따라서, 적은 금액이더라도 오랜 시간 게임을 즐기신다면, 포인트를 꾸준히 적립하실 수 있습니다.`,
+  },
+  {
+    q: "궁금한게 많은데 어디로 문의하면 되나요?",
+    a: `궁금하신 내용은 카카오톨 아이디: CODEVENT를 통해 문의주시면 자세하게 설명드리고 있습니다. 많은 관심과 문의 부탁드리겠습니다.`,
+    cta: true,
+  },
+];
+
+// Footer legal rows: [label, value] pairs flow inline with ㅣ separators
+const footerItems: [string, string][] = [
+  ["회사명", "(주)싱글즈키친"],
+  ["대표", "김인규"],
+  ["대표전화", "02-6956-2671"],
+  ["주소", "08389 서울특별시 구로구 디지털로 26길 5 (구로동) 에이스 하이앤드 타워1차 7층 706호"],
+  ["사업자 등록번호", "836-81-01858"],
+  ["통신판매매업 신고번호", "2021-서울구로-1116호 [사업자정보확인]"],
+  ["건강기능능식품 영업신고증 신고번호", "양천구-제2023-0097034"],
+  ["개인정보관리책임자", "김인규(ecb@singles-kitchen.co.,kr)"],
+];
+
+const melcoP2 = `멜코클럽은 티어(등급) 업그레이드, 포인트 멀티플라이어(적립 배수) 등 멤버십 리워드를 강화해 운영하고 있으며, 멤버 전용 오퍼가 제공됩니다. 바일에서는 Melco Club 앱을 통해 회원 상태/혜택 확인, 맞춤형 프로모션 오퍼, 호텔 및 레스토랑 예약까지 한 번에 관리할 수 있어 여행 일정이 훨씬 편해집니다.`;
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="robots" content="noindex" />
+    <meta name="description" content="마닐라 시티오브드림 누와 호텔 또는 노부 호텔 2박 + 편도픽업, 99,000원 대박 프로모션" />
+    <meta property="og:title" content={title} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={siteUrl} />
+    <meta name="twitter:title" content={title} />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  </head>
+  <body>
+    <!-- Floating KakaoTalk consult button -->
+    <a
+      href={KAKAO_OPEN}
+      target="_blank"
+      rel="noopener"
+      class="fixed right-4 top-[62vh] z-50 block w-[120px] transition-transform duration-300 hover:scale-105 md:right-6 xl:w-[150px]"
+      aria-label="카카오톡 상담하기"
+    >
+      <img src={img("00_kakao_float_btn")} alt="카카오톡 상담" class="h-auto w-full" />
+    </a>
+
+    <!-- ─── Hero ──────────────────────────────────────────────────── -->
+    <header class="relative overflow-hidden bg-black">
+      <img
+        src={img("01_hero_header")}
+        alt=""
+        class="absolute inset-0 h-full w-full object-cover object-top"
+      />
+      <div
+        class="absolute inset-0 bg-[linear-gradient(180deg,rgba(43,54,160,0.85)_0%,rgba(24,32,110,0.45)_34%,rgba(0,0,0,0.25)_62%,#000_100%)]"
+      >
+      </div>
+
+      <div class="relative mx-auto w-full max-w-[1120px] px-5 pb-16 pt-8 md:px-10 md:pb-24 xl:pb-32">
+        <a
+          href={KAKAO_QR}
+          target="_blank"
+          rel="noopener"
+          class="hidden rounded-full border border-white/80 px-5 py-2 text-caption font-semibold tracking-wide transition-colors hover:bg-white/10 md:inline-block"
+        >
+          프로모션 참여하기
+        </a>
+
+        <img
+          src={img("01_logo_manilacod")}
+          alt="City of Dreams Manila"
+          class="mx-auto mt-2 w-[108px] md:mt-0"
+        />
+
+        <div class="mt-10 text-center md:mt-14">
+          <h1 class="text-h2 font-light tracking-[0.06em] text-white/95">마닐라 시티오브드림</h1>
+          <p class="mt-2 text-lead">
+            시티오브드림 누와 호텔 또는 노부 호텔 2박 + 편도픽업
+            <strong class="font-bold">약 600,000원 상당 혜택</strong>
+          </p>
+          <p class="mt-4 text-display font-extrabold tracking-tight">
+            99,000원<br class="md:hidden" /><span class="font-bold"> 대박 프로모션</span>
+          </p>
+          <p class="mt-6 text-lead font-light">
+            카카오톡 <strong class="font-extrabold">“codevent”</strong>로 문의
+          </p>
+          <p class="mt-1 text-caption text-white/80">
+            (카카오톡 상담후 방문하시는날자에 호텔방 확인후 결제진행)
+          </p>
+          <a
+            href={KAKAO_QR}
+            target="_blank"
+            rel="noopener"
+            class="mt-8 inline-block rounded-full border border-white px-8 py-3 text-body font-semibold transition-colors hover:bg-white/10 md:hidden"
+          >
+            프로모션 참여하기
+          </a>
+        </div>
+
+        <!-- 참여 가능고객 -->
+        <div class="reveal mt-20 max-w-[580px] text-caption leading-relaxed text-white md:mt-40">
+          <p class="font-bold">프로모션 참여 가능고객</p>
+          <p>- 시티오브드림 (CITY OF DREAM) 마닐라 신규방문고객</p>
+          <p>- 멤버쉽가입(멜코클럽) 가입자중 6개월 이상 방문을 안하신 고객님 대상!</p>
+          <p class="mt-4">
+            상담전화 : <strong class="text-body font-bold">02-6956-2671</strong>
+            (상담시간 오전 10시 ~ 오후 5시 문의전화가 많을시 지연이 될수 있습니다.)
+          </p>
+          <p>필요서류 : 여권사진 + 항공권 (예약시)</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- ─── CITY OF DREAM banner strip ────────────────────────────── -->
+    <div class="overflow-hidden bg-black" aria-hidden="true">
+      <picture>
+        <source media="(min-width: 1280px)" srcset={img("02_banner_marquee_d")} />
+        <source media="(min-width: 768px)" srcset={img("02_banner_marquee_t")} />
+        <img src={img("02_banner_marquee_m")} alt="" class="w-full" />
+      </picture>
+    </div>
+
+    <!-- ─── Intro: 마닐라 시티오브드림 ────────────────────────────── -->
+    <section class="bg-black">
+      <div class="relative">
+        <img
+          src={img("02_intro_cod_night")}
+          alt="City of Dreams Manila 야경"
+          class="aspect-[3/4] w-full object-cover md:aspect-[16/10] xl:aspect-[1280/700]"
+        />
+        <div class="absolute inset-0 bg-[linear-gradient(180deg,#000_4%,rgba(0,0,0,0.55)_36%,rgba(0,0,0,0)_75%)]"></div>
+        <div class="reveal absolute inset-x-0 top-[10%] px-5 text-center md:top-[12%]">
+          <p class="text-eyebrow font-bold">꿈이 현실이 되는 도심 속 리조트</p>
+          <h2 class="mt-1 text-h1 font-extrabold">마닐라 시티오브드림</h2>
+          <p class="mt-3 text-lead font-light text-white/90">당신의 꿈같은 휴가가 기다립니다!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 혜택 01 — 2대 럭셔리 호텔 ─────────────────────────────── -->
+    <section class="bg-[linear-gradient(180deg,#000_0%,#0e1440_30%,#0a0f2e_55%,#0d0d0d_100%)]">
+      <div class="mx-auto w-full max-w-[1120px] px-5 py-24 text-center md:px-10 md:py-40">
+        <span
+          class="reveal inline-block rounded-full bg-brand px-5 py-1.5 text-caption font-bold"
+        >
+          혜택 01
+        </span>
+        <h2 class="reveal mt-6 text-h2 font-medium leading-relaxed">
+          마닐라 시티 오브 드림스 2대 럭셔리 호텔<br />
+          <span class="font-bold">Nüwa 누아 호텔 / Nobu 노부 호텔</span>
+        </h2>
+        <p class="reveal mt-5 flex items-center justify-center gap-3 text-h1 font-extrabold">
+          <span class="hidden xl:inline">2박3일 숙박권</span>
+          <img src="/assets/icon-discount-arrow.svg" alt="" class="h-[1.1em] w-[1.1em] shrink-0" />
+          <span><span class="text-flame">80%</span> 파격 할인</span>
+        </p>
+
+        <div class="reveal mt-12 grid grid-cols-3 gap-1 md:gap-3">
+          <img src={img("03_benefit01_nobu_hotel")} alt="누아 호텔 수영장" class="aspect-[0.94] w-full object-cover" />
+          <img src={img("03_benefit01_forbes")} alt="Forbes Travel Guide — NUWA / NOBU HOTEL" class="aspect-[0.94] w-full object-cover" />
+          <img src={img("03_benefit01_hotel")} alt="노부 호텔 객실" class="aspect-[0.94] w-full object-cover" />
+        </div>
+
+        <p class="mx-auto mt-12 max-w-[640px] text-body">
+          공항(NAIA)과 가까운 City of Dreams Manila(파라냐케)의 서로 다른 매력의 두 호텔.
+          마닐라의 밤을 가장 ‘맛있게’ 즐길 수 있는 Nobu(노부)호텔과 도심 속 가장 조용한 럭셔리로
+          하루를 시작할 수 있는 Nüwa(누아)호텔 중 2박 3일 머무실 호텔을 선택하실 수 있습니다.
+        </p>
+        <p class="mx-auto mt-6 max-w-[640px] text-caption text-white/70">
+          * 여행 일정에 따라 일부 호텔은 예약이 불가할 수 있습니다. 예약 가능 여부는 상품 문의를
+          통해 부탁드립니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- ─── 프로모션 참여 방법 ────────────────────────────────────── -->
+    <section class="bg-white text-ink">
+      <div class="mx-auto w-full max-w-[720px] px-5 py-24 md:px-10 md:py-40">
+        <div class="text-center">
+          <p class="reveal text-eyebrow font-bold">이렇게만 하시면 됩니다!</p>
+          <h2 class="reveal mt-1 text-h1 font-extrabold">프로모션 참여 방법</h2>
+        </div>
+        <ol class="mt-14 md:mt-20">
+          {
+            steps.map((step, i) => (
+              <li
+                class:list={[
+                  "reveal flex items-start gap-5 py-5 md:gap-8 md:py-6",
+                  i > 0 && "border-t border-black/10",
+                ]}
+              >
+                <img src={`/assets/${step.icon}.svg`} alt={`${i + 1}단계`} class="mt-0.5 h-8 w-8 shrink-0" />
+                <p class="text-body" set:html={step.html} />
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+    </section>
+
+    <!-- ─── 멜코클럽 멤버십 카드 ──────────────────────────────────── -->
+    <section class="bg-ink">
+      <div class="mx-auto w-full max-w-[720px] px-5 py-24 text-center md:px-10 md:py-40">
+        <p class="reveal text-eyebrow font-bold text-flame">여기서 잠깐!</p>
+        <h2 class="reveal mt-1 text-h1 font-extrabold">멜코클럽 멤버십 카드가 뭔가요?</h2>
+
+        <div class="reveal relative mx-auto mt-14 w-full max-w-[268px] md:mt-20 md:max-w-[544px]">
+          <img src={img("06_melco_card")} alt="멜코클럽 멤버십 카드" class="w-full" />
+          <img
+            src={img("06_melco_logo")}
+            alt="MELCO CLUB"
+            class="absolute left-1/2 top-1/2 w-[110%] max-w-none -translate-x-1/2 -translate-y-1/2"
+          />
+        </div>
+        <p class="mt-8 text-body text-white/95">
+          멜코클럽(Melco Club) 멤버십 카드는 City of Dreams Manila에서 게임, 다이닝, 호텔/스파 등
+          리조트 전반의 이용을 포인트 적립과 리워드 혜택으로 확장해주는 리워드 프로그램 카드입니다.
+          가입 후에는 플레이/이용 실적에 따라 포인트를 쌓고, 다양한 혜택과 프로모션을 통해 더
+          풍성한 리조트 경험을 누릴 수 있습니다.
+        </p>
+
+        <img
+          src={img("06_melco_reward")}
+          alt="멜코클럽 멤버십 카드 등급"
+          class="reveal mx-auto mt-14 w-full max-w-[295px] md:mt-20 md:max-w-[640px]"
+        />
+        <p class="mt-8 text-body text-white/95">{melcoP2}</p>
+
+        <h2 class="reveal mt-24 text-h1 font-extrabold md:mt-40">
+          멜코클럽 멤버십 카드<br />어디서 어떻게 발급 받나요?
+        </h2>
+        <img
+          src={img("06_melco_signup")}
+          alt="City of Dreams Manila 그라운드 플로어 멤버십 발급 위치 안내"
+          class="reveal mt-10 w-full md:mt-14"
+        />
+        <p class="mt-8 text-body text-white/95">{melcoP2}</p>
+      </div>
+    </section>
+
+    <!-- ─── COD의 즐길거리들 ──────────────────────────────────────── -->
+    <section class="bg-white text-ink">
+      <div class="mx-auto w-full max-w-[1120px] px-5 py-24 md:px-10 md:py-40">
+        <div class="text-center">
+          <p class="reveal text-eyebrow font-bold">더욱 다양한</p>
+          <h2 class="reveal mt-1 text-h1 font-extrabold">COD의 즐길거리들</h2>
+        </div>
+        <div class="mt-14 grid grid-cols-2 gap-x-4 gap-y-12 md:mt-20 md:gap-x-6 xl:grid-cols-4">
+          {
+            funCards.map((card) => (
+              <figure class="reveal text-center">
+                <figcaption class="inline-block rounded-full bg-[#272727] px-5 py-1.5 text-caption font-bold text-white">
+                  {card.pill}
+                </figcaption>
+                <img
+                  src={img(card.image)}
+                  alt={card.pill}
+                  class="mt-4 aspect-[10/9] w-full object-cover"
+                />
+                <p class="mt-4 text-left text-caption text-ink">{card.caption}</p>
+              </figure>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Q&A ───────────────────────────────────────────────────── -->
+    <section class="bg-paper text-ink">
+      <div class="mx-auto w-full max-w-[720px] px-5 py-24 md:px-10 md:py-40">
+        <div class="text-center">
+          <p class="reveal text-eyebrow font-bold">문의사항에 대한 답변</p>
+          <h2 class="reveal mt-1 text-h1 font-extrabold">Q&amp;A</h2>
+        </div>
+        <div class="mt-14 md:mt-20">
+          {
+            qna.map((item, i) => (
+              <div class:list={["reveal py-8 md:py-10", i > 0 && "border-t border-black/10"]}>
+                <div class="flex items-start gap-4 md:gap-6">
+                  <span class="text-h2 font-black leading-none">Q.</span>
+                  <h3 class="text-body font-bold md:text-h2 md:font-bold">{item.q}</h3>
+                </div>
+                <p class="mt-4 pl-9 text-body text-ink/90 md:pl-12" set:html={item.a} />
+                {item.cta && (
+                  <div class="mt-6 pl-9 md:pl-12">
+                    <a
+                      href={KAKAO_OPEN}
+                      target="_blank"
+                      rel="noopener"
+                      class="inline-block rounded-full border border-ink px-5 py-1.5 text-caption font-semibold transition-colors hover:bg-ink hover:text-white"
+                    >
+                      카카오톡 문의하기
+                    </a>
+                  </div>
+                )}
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Final CTA ─────────────────────────────────────────────── -->
+    <section class="bg-night">
+      <div class="mx-auto w-full max-w-[720px] px-5 pb-28 pt-32 text-center md:px-10 md:pb-40 md:pt-48">
+        <p class="reveal text-eyebrow font-bold">한여름 밤의 꿈</p>
+        <h2 class="reveal mt-1 text-h1 font-extrabold">
+          마닐라 CITY OF DREAMS가<br class="md:hidden" /> 여러분을 기다립니다!
+        </h2>
+        <a
+          href={KAKAO_OPEN}
+          target="_blank"
+          rel="noopener"
+          class="reveal mt-12 inline-block rounded-full border border-white/90 px-8 py-3 text-body font-light tracking-wide transition-colors hover:bg-white/10"
+        >
+          프로모션 참가하기
+        </a>
+      </div>
+    </section>
+
+    <!-- ─── Footer ────────────────────────────────────────────────── -->
+    <footer class="bg-black">
+      <div
+        class="mx-auto flex w-full max-w-[1120px] flex-wrap items-baseline gap-x-4 gap-y-2 px-5 pb-20 pt-16 text-legal md:px-10"
+      >
+        {
+          footerItems.map(([label, value]) => (
+            <>
+              <span class="text-white/50">
+                {label} <span class="ml-2 font-semibold text-white">{value}</span>
+              </span>
+              <span class="text-white/25" aria-hidden="true">
+                ㅣ
+              </span>
+            </>
+          ))
+        }
+        <span class="text-white/70">Copyright ⓒ 세모샵 All right reserved.</span>
+      </div>
+    </footer>
+
+    <script is:inline>
+      // Reveal-on-scroll: add .is-in when a .reveal element enters the viewport.
+      (function () {
+        var els = document.querySelectorAll(".reveal");
+        if (!("IntersectionObserver" in window)) {
+          els.forEach(function (el) {
+            el.classList.add("is-in");
+          });
+          return;
+        }
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-in");
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15 }
+        );
+        els.forEach(function (el) {
+          io.observe(el);
+        });
+      })();
+    </script>
+  </body>
+</html>

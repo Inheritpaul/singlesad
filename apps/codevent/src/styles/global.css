@@ -1,0 +1,86 @@
+/* Project-wide breakpoint convention (applies to every client site):
+ *   base   <768px    mobile
+ *   md:    ≥768px    tablet
+ *   xl:    ≥1280px   desktop
+ *   2xl:   ≥1920px   large
+ * Do not add sm:, lg:, or any other breakpoints. Use these three only.
+ */
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-md: 768px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1920px;
+
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, "Apple SD Gothic Neo",
+    "Noto Sans KR", "Segoe UI", sans-serif;
+
+  /* Brand palette (sampled from the original design) */
+  --color-ink: #0d0d0d; /* near-black section bg */
+  --color-night: #141414; /* final CTA section bg */
+  --color-paper: #f7f7f7; /* Q&A section bg */
+  --color-brand: #4a62ff; /* badge / option-pill blue */
+  --color-mint: #2ce08c; /* step progress green */
+  --color-flame: #ff5555; /* red accents (여기서 잠깐!, 80%) */
+
+  /* ── Type scale ─────────────────────────────────────────────────
+   * One fluid hierarchy for the whole page. Sizes interpolate from
+   * the 375px design to the 1280px design and then lock.
+   *   display  hero price line        40px → 84px
+   *   h1       section titles         22px → 40px
+   *   h2       sub-titles             18px → 26px
+   *   eyebrow  section kickers        15px → 22px
+   *   lead     hero subtitle          15px → 21px
+   *   body     paragraphs             15px → 18px
+   *   caption  pills, notes           12px → 14px
+   *   legal    footer                 12px
+   */
+  --text-display: clamp(2.5rem, 1.1rem + 6vw, 5.25rem);
+  --text-display--line-height: 1.12;
+  --text-h1: clamp(1.375rem, 0.95rem + 1.9vw, 2.5rem);
+  --text-h1--line-height: 1.3;
+  --text-h2: clamp(1.125rem, 0.95rem + 0.8vw, 1.625rem);
+  --text-h2--line-height: 1.4;
+  --text-eyebrow: clamp(0.9375rem, 0.8rem + 0.7vw, 1.375rem);
+  --text-eyebrow--line-height: 1.3;
+  --text-lead: clamp(0.9375rem, 0.82rem + 0.55vw, 1.3125rem);
+  --text-lead--line-height: 1.5;
+  --text-body: clamp(0.9375rem, 0.9rem + 0.25vw, 1.125rem);
+  --text-body--line-height: 1.7;
+  --text-caption: clamp(0.75rem, 0.71rem + 0.2vw, 0.875rem);
+  --text-caption--line-height: 1.55;
+  --text-legal: 0.75rem;
+  --text-legal--line-height: 1.8;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    /* break-keep: Korean wraps at spaces, never mid-word */
+    @apply bg-black font-sans text-white antialiased break-keep;
+  }
+}
+
+@layer components {
+  /* Appear-on-scroll (mirrors the original: fade + rise, 0.6s OUT_CUBIC) */
+  .reveal {
+    opacity: 0;
+    transform: translateY(48px);
+  }
+  .reveal.is-in {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity 0.6s cubic-bezier(0.215, 0.61, 0.355, 1),
+      transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
