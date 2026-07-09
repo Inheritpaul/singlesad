@@ -53,6 +53,13 @@ below the footer).
 4. Fun-cards section: original had two half-clipped duplicate rows; rebuilt as a clean
    2-col (mobile) / 4-col (desktop) grid of the four unique cards.
 5. Hover micro-states from Figma are approximated (simple scale/color transitions).
+7. Organization pass (client-approved UI tweaks, no content removed): hero offer grouped
+   in a translucent price panel with baseline-aligned tabular prices; hero CTA shown at
+   every breakpoint; eligibility block styled as a card; "2박/3박 숙박권" discount line
+   visible on mobile too; numbered STEP labels; visible "A." markers in Q&A; long
+   paragraphs left-aligned; consistent rounded corners on content images; footer
+   restructured as a label/value ledger (stacked on mobile, two pairs per row on md+ —
+   the original's ㅣ separators became grid structure).
 6. `robots: noindex` kept to match the original — remove in index.astro when the new
    domain should be indexed. `og:url` still points at codevent.co.kr; update with the
    new domain.
