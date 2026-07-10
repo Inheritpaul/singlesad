@@ -29,8 +29,8 @@
    * the 375px design to the 1280px design and then lock.
    * (Boosted ~135% from the first cut — captions/legal ~125% —
    * per client feedback that the original sizing read too small.)
-   *   display  hero price line        54px → 104px (capped so the
-   *            price stays on one line in the 1120px container)
+   *   display  hero price cards       54px → 72px (sized so the two
+   *            price boxes fit side by side from 768px up)
    *   h1       section titles         30px → 54px
    *   h2       sub-titles             24px → 35px
    *   eyebrow  section kickers        20px → 30px
@@ -39,7 +39,7 @@
    *   caption  pills, notes           15px → 18px
    *   legal    footer                 15px
    */
-  --text-display: clamp(3.375rem, 1.5rem + 8vw, 6.5rem);
+  --text-display: clamp(3.375rem, 2rem + 3.5vw, 4.5rem);
   --text-display--line-height: 1.12;
   --text-h1: clamp(1.875rem, 1.3rem + 2.5vw, 3.375rem);
   --text-h1--line-height: 1.3;
