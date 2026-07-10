@@ -8,7 +8,7 @@
 <path d="M16 17V0H32V17H16Z" fill="var(--fill-0, #D9D9D9)" id="Vector 2"/>
 </mask>
 <g mask="url(#mask0_0_40)">
-<circle cx="8" cy="8" fill="var(--fill-0, white)" id="Ellipse 2" r="6.75" stroke="var(--stroke-0, #2CE08C)" stroke-width="2.5"/>
+<circle cx="16" cy="16" fill="var(--fill-0, white)" id="Ellipse 2" r="13.5" stroke="var(--stroke-0, #2CE08C)" stroke-width="5"/>
 </g>
 </g>
 </g>
