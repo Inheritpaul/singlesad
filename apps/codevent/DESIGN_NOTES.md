@@ -60,9 +60,27 @@ below the footer).
    paragraphs left-aligned; consistent rounded corners on content images; footer
    restructured as a label/value ledger (stacked on mobile, two pairs per row on md+ —
    the original's ㅣ separators became grid structure).
-6. `robots: noindex` kept to match the original — remove in index.astro when the new
-   domain should be indexed. `og:url` still points at codevent.co.kr; update with the
-   new domain.
+6. `robots: noindex` kept to match the original — remove in index.astro if the site
+   should appear in search engines.
+
+## Deployment (live since 2026-07-10)
+
+Cloudflare **Worker with static assets** (see [wrangler.jsonc](./wrangler.jsonc)),
+serving https://www.codevent.co.kr (apex 308-redirects to www via a zone rule that
+predates this deploy; http→https is zone-level too).
+
+- Deploy: `pnpm --filter @singlesad/codevent build && cd apps/codevent && npx wrangler deploy`
+- Attached via **zone routes** (`codevent.co.kr/*`, `www.codevent.co.kr/*`), NOT custom
+  domains: the zone's DNS records were imported from Gabia and still point at the old
+  Figma Sites origin, so the custom-domains API refused them (error 100117, "externally
+  managed DNS records"), and wrangler's OAuth token has no DNS-edit scope. The records
+  are proxied, so the Worker route intercepts every request and Figma's origin is never
+  reached. **Do not delete those DNS records** unless switching to custom domains at the
+  same time — without a record the hostname stops resolving entirely.
+- Raster assets still serve from the `pub-*.r2.dev` public bucket URL, which Cloudflare
+  rate-limits (it's meant for development). If traffic grows, add a custom domain to the
+  `singlesad-assets` bucket (e.g. assets.codevent.co.kr) and update
+  `PUBLIC_ASSETS_BASE_URL`.
 
 ## Source-of-truth extraction (for future re-syncs)
 

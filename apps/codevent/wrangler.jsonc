@@ -1,0 +1,17 @@
+{
+  "name": "codevent",
+  "compatibility_date": "2026-07-01",
+  // Static site: serve the Astro build output, no Worker script needed.
+  "assets": {
+    "directory": "./dist"
+  },
+  // Zone routes (not custom domains): the zone's existing proxied DNS
+  // records stay in place and the Worker intercepts all requests on
+  // these hostnames. Custom domains were blocked by API error 100117
+  // (externally managed DNS records from the Gabia zone import).
+  "routes": [
+    { "pattern": "codevent.co.kr/*", "zone_name": "codevent.co.kr" },
+    { "pattern": "www.codevent.co.kr/*", "zone_name": "codevent.co.kr" }
+  ],
+  "workers_dev": false
+}
