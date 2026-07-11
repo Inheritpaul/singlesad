@@ -1,0 +1,50 @@
+name: Deploy codevent
+
+# Builds apps/codevent and deploys it to Cloudflare (codevent.co.kr).
+# Runs on pushes to main that touch the codevent app or this workflow, and
+# can be started manually from the Actions tab (or via workflow_dispatch).
+#
+# Required repository secret:
+#   CLOUDFLARE_API_TOKEN  — token with the "Edit Cloudflare Workers" permission
+# Optional repository secret (only needed if the token spans multiple accounts):
+#   CLOUDFLARE_ACCOUNT_ID — the Cloudflare account id that owns codevent.co.kr
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/codevent/**"
+      - ".github/workflows/deploy-codevent.yml"
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.33.1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build codevent
+        env:
+          # Public R2 bucket URL for raster assets (matches apps/codevent/.env.example).
+          PUBLIC_ASSETS_BASE_URL: https://pub-1746e96cddfa492aa447bff1169a1f62.r2.dev
+        run: pnpm --filter @singlesad/codevent build
+
+      - name: Deploy to Cloudflare
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: apps/codevent
+          command: deploy
