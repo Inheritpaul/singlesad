@@ -46,5 +46,8 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          # v4 is required: this is an assets-only Worker (no script entry-point),
+          # which wrangler-action's default 3.x does not support.
+          wranglerVersion: "4.110.0"
           workingDirectory: apps/codevent
           command: deploy
